@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>原型链</title>
+	<style type="text/css">
+	p{
+		margin-left: 150px;
+		color: red;
+		font-size: 20px;
+	}
+	p:nth-child(2){
+		color:green;
+	}
+	p:nth-child(4){
+		color:green;
+	}
+	p:nth-child(6){
+		color:green;
+	}
+	p:nth-child(8){
+		color:green;
+	}
+		.box1{
+          width: 600px;
+          height: 400px;
+          margin-left: 150px;
+          border: 1px solid pink;
+          background-image: url(img/00001.jpg);
+          background-size: cover;
+          background-repeat: no-repeat;
+		}
+		.box2{
+          width: 600px;
+          height: 400px;
+          margin-left: 150px;
+          border: 1px solid pink;
+          background-image: url(img/00002.jpg);
+          background-size: cover;
+          background-repeat: no-repeat;
+		}
+		.box3{
+          width: 600px;
+          height: 400px;
+          margin-left: 150px;
+          border: 1px solid pink;
+          background-image: url(img/00003.jpg);
+          background-size: cover;
+          background-repeat: no-repeat;
+		}
+		.box4{
+          width: 600px;
+          height: 400px;
+          margin-left: 150px;
+          border: 1px solid pink;
+          background-image: url(img/00004.jpg);
+          background-size: cover;
+          background-repeat: no-repeat;
+		}
+		.box5{
+          width: 600px;
+          height: 400px;
+          margin-left: 150px;
+          border: 1px solid pink;
+          background-image: url(img/00005.jpg);
+          background-size: cover;
+          background-repeat: no-repeat;
+		}
+		.box6{
+          width: 800px;
+          height: 400px;
+          margin-left: 150px;
+          border: 1px solid pink;
+          background-image: url(img/00006.jpg);
+          background-size: cover;
+          background-repeat: no-repeat;
+		}
+		.box7{
+          width: 800px;
+          height: 400px;
+          margin-left: 150px;
+          background-color: green;
+          border: 1px solid pink;
+		}
+		.box7 p{
+			color:black;
+			font-size: 50px;
+		}
+	</style>
+</head>
+<body>
+	<p>
+			function Fn(name){<br>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.name=name;<br>
+		}<br>
+		Fn.prototype.sayName=function(){<br>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;console.log('I am '+"tom");<br>
+		}<br>
+	</p>
+	<p>
+		var p1=new Fn("tom");<br>
+		console.log("p1",p1);<br>
+    </p>
+	<div class="box1"></div>
+	<p>
+		var p2=new Fn("leo");<br>
+		console.log("p2",p2);<br>
+	</p>
+	<div class="box2"></div>
+	<p>
+		console.log( "Fn.prototype",Fn.prototype);<br>
+	</p>
+	<div class="box3"></div>
+	说明p1和p2的__proto_同时指向Fn.prototype
+	<p>
+		console.log('Fn.prototype.__proto__',Fn.prototype.__proto__);
+	</p>
+    </p>
+    <div class="box4"></div>
+	<p>
+		console.log( "Object.prototype",Object.prototype)<br>
+	
+    </p>
+	<div class="box5"></div>
+	说明Fn.prototype.__proto__指向Object.prototype
+	<p>
+		console.log( "Object.prototype.__proto__", Object.prototype.__proto__);
+	</p>
+	<div class="box6"></div>
+	说明Object.prototype.__proto__指向null
+	<div class="box7">
+		<p>综上所述：当用"new 构造函数"创建一个对象实例后,在构造函数中定义的属性和方法会成为对象实例自己的属性和方法,</p>
+	</div>
+</body>
+<script type="text/javascript">
+	function Fn(name){
+		this.name=name;
+	}
+	Fn.prototype.sayName=function(){
+		console.log('I am '+"tom");
+	}
+	var p1=new Fn("tom");
+	console.log( "Fn.prototype",Fn.prototype);
+	console.log("p1",p1);
+	var p2=new Fn("leo");
+	console.log("p2",p2);
+	console.log('Fn.prototype.__proto__',Fn.prototype.__proto__);
+	console.log( "Object.prototype",Object.prototype);
+	console.log( "Object.prototype.__proto__", Object.prototype.__proto__);
+</script>
+</html>

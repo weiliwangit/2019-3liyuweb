@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>ceshi</title>
+	<link rel="stylesheet" href="css/reset.css">
+	<style type="text/css">
+		
+		.dropdown-layer{
+			display: none;
+			width: 100px;
+			height: 100px;
+			border: 1px solid black;
+		}
+		/*.dropdown:hover .dropdown-layer{
+			display:block; 
+		}*/
+	</style>
+</head>
+<body>
+	<div class="box">
+		<ul>
+			<li class="dropdown">
+				<a href="#">我的淘宝</a>
+				<ul class="dropdown-layer">
+					<li>
+						<a href="#">
+						已加购的宝贝
+						</a>
+					</li>
+					<li>
+						<a href="#">
+						我的足迹
+						</a>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</div>
+</body>
+<script src="js/jquery-1.12.4.js"></script>
+<!-- <script src="./js/ceshifengzhuang.js"></script> -->
+<script>
+	//1.自定义事件
+	var js={
+			show:function($elem){
+				if($elem.data("status")=="show") return;
+				//防止用户多次点击
+				if($elem.data("status")=="shown") return;
+				$elem.trigger("show");
+				$elem.show();
+				$elem.trigger("shown")
+			},
+			hide:function($elem){
+				if($elem.data("status")=="hide") return;
+				if($elem.data("status")=="hidden") return;
+				$elem.trigger("hide");
+				$elem.hide();
+				$elem.trigger("hidden")
+			}
+	}
+</script>
+<script>
+	$(function(){
+		var $elem=$(".dropdown-layer");
+		$elem.on("show shown hide hidden",function(ev){
+			console.log(ev.type);
+		});
+		$(".dropdown").on("click",function(ev){
+			js.show($elem)
+			$elem.data("status","show");
+			ev.stopPropagation();
+		});
+		$(document).on("click",function(){
+			js.hide($elem)
+			$elem.data("status","hide");
+		})
+	})
+</script>
+<!-- 插件的封装首先自定义一个事件，然后封装，也可以在封装里写一个函数 -->
+</html>

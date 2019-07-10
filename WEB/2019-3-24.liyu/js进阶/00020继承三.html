@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>继承三</title>
+</head>
+<body>
+	
+</body>
+<script type="text/javascript">
+		function Person(name,age){
+		// console.log(this)
+		this.name=name;
+		this.age=age;
+		console.log(11);
+	}
+	Person.prototype.sayName=function(){
+		console.log('i am'+this.name);
+	}
+	Person.prototype.sayAge=function(){
+		console.log('i am'+this.age);
+	}
+	function Student(name,age){
+		// console.log("aa",this)
+		//Person();一个函数调用另一个函数this的指向还是window
+		Person.call(this,name,age);
+	}
+	Student.prototype=new Person();
+
+	var s1=new Student("tom",18);
+	console.log(s1);
+   // 函数外的this和内部只想一样
+</script>
+</html>

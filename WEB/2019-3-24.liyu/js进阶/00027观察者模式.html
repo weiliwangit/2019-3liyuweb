@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>把一个函数定义在window上或者gou'jia</title>
+</head>
+<body>
+	
+</body>
+<script type="text/javascript">
+	(function(w){
+		function Person(name,age){
+			this.name=name;
+			this.age=age;
+		}
+		// Person.prototype.sayName=function(){
+		// 	console.log('i am'+this.name);
+		// }
+		// Person.prototype.sayAge=function(){
+		// 	console.log('i am'+this.age);
+		// }
+		Person.prototype={
+			constructor:Person,
+			sayName:function(){
+			console.log('i am'+this.name);
+			},
+		}
+		w.Person=Person;
+	})(window);
+	var p1=new Person("tom",18);
+	console.log(p1);
+</script>
+</html>

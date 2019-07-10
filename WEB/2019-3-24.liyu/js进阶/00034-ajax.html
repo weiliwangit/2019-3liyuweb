@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>00033-node-test.html</title>
+	<style type="text/css">
+		
+	</style>
+</head>
+<body>
+	<button id="btn">请求数据</button>
+</body>
+<script type="text/javascript">
+	var oBtn=document.getElementById("btn")
+	oBtn.onclick=function(){
+		//生成ajax对象
+		var oAjax=new XMLHttpRequest();
+		// console.log(oAjax)
+		//建立联系
+		oAjax.open("GET","http://127.0.0.1:3000/00034-date.json",true);
+		//用ajax对象设置请求头(可选)
+		oAjax.setRequestHeader("Content-Type","x-www-form-urlencoded")
+		//发送消息
+		oAjax.send();
+		//服务器接收并响应
+		oAjax.onreadystatechange=function(){
+			// console.log(oAjax.readyState)
+			if(oAjax.readyState==4){
+				// console.log(oAjax.status);
+				if(oAjax.status==200){
+					// console.log(oAjax.responseText)
+					var strToObj=JSON.parse(oAjax.responseText);
+					console.log(strToObj);
+				}
+			}
+		}
+	}
+</script>
+</html>

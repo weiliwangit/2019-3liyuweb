@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>自定义事件</title>
+</head>
+<body>
+	<button id="btn">自定义事件</button>
+</body>
+<script type="text/javascript">
+	var oBtn=document.getElementById('btn');
+	// 1.生成自定义事件对象
+	var ev= new Event('test');
+	//绑定自定义事件
+    oBtn.addEventListener('test',function(){
+        alert("new Event");
+    },false);
+    //触发自定义事件
+    oBtn.dispatchEvent(ev);
+</script>
+</html>

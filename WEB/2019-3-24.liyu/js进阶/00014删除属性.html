@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>删除属性</title>
+</head>
+<body>
+	
+</body>
+<script type="text/javascript">
+	function person(name,age){
+		this.name=name;
+	}
+	
+	person.prototype.sayName=function(){
+		console.log('i am'+"tom");
+	}
+	person.prototype.LEAGS=2;
+	var p1=new person("tom",18);
+	p1.sayName();
+
+	console.log(delete p1.test);//注意删除原型链上没有的会返回一个真
+	console.log(delete p1.name);
+	console.log(delete person.prototype.LEAGS);
+	console.log(p1.LEAGS);//打印原型链上没有的会返回u'n
+		this.age=age;
+	console.log(person.prototype.LEAGS);
+</script>
+</html>

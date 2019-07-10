@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>tingzhidonghua</title>
+	<style type="text/css">
+		div{
+			width: 100px;
+			height: 100px;
+			opacity: 0.2;
+			background: red;
+		}
+	</style>
+</head>
+<body>
+	<div></div>
+</body>
+<script type="text/javascript" src="./jquery-1.12.4.js"></script>
+<script>
+	$("div").on("click",function(){
+		$("div").animation({width:300},1000,function(){
+			alert(11)
+		})
+	})
+</script>
+</html>

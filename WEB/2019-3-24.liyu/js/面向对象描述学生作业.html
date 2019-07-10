@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>面向对象描述学生作业</title>
+</head>
+<body>
+	
+</body>
+<script type="text/javascript">
+	function CreatePerson(name,age,speciality){
+		this.name=name;
+		this.age=age;
+		this.speciality=speciality;
+	}
+	CreatePerson.prototype.sayName=function(){
+		console.log('I am '+this.name);
+		}
+	CreatePerson.prototype.sayAge=function(){
+		console.log('I am '+this.age+' years old');
+	}
+	CreatePerson.prototype.saySpeciality=function(){
+		console.log(this.speciality);
+	}
+	
+	var pern1=new CreatePerson("tom",18);
+	console.log(pern1)
+	 pern1.sayName();
+	 pern1.sayAge();
+	 pern1.saySpeciality();
+	var pern2=new CreatePerson("tom",18);
+	 pern2.sayName();
+	 pern2.sayAge();
+	 pern2.saySpeciality();
+</script>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>网页换肤</title>
+	<link id="sKin" rel="stylesheet" type="text/css" href="css/1-yeshou.css">
+	<script type="text/javascript">
+		function toSkin2(){
+         var oBox = document.getElementById('sKin')
+         oBox.href='css/1-meinv.css';
+		}
+		function toSkin1(){
+         var oBox = document.getElementById('sKin')
+         oBox.href='css/1-yeshou.css';
+		}
+	</script>
+</head>
+<body>
+	<button onclick="toSkin1()">美女换肤</button>
+	<button onclick="toSkin2()">野兽换肤</button>
+</body>
+</html>

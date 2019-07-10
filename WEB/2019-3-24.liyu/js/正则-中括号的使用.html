@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>正则-中括号的使用</title>
+</head>
+<body>
+	
+</body>
+<script type="text/javascript">
+	
+	var str="猪猪猪猪猪abh35BKJKLGJ5sjfh7754365jdhfJWHU";
+	var reg1=/[A-Z]/g;
+	var reg2=/[a-z]/g;
+	var reg3=/[\u4e00-\u9fa5]/g;
+	console.log(str.replace(reg3,"*"));
+	console.log(str.replace(reg1,"*"));
+	console.log(str.replace(reg2,"*"));
+	
+	
+
+</script>
+</html>

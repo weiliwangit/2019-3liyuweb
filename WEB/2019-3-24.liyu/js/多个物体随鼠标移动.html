@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>随着鼠标移动</title>
+	<style type="text/css">
+		*{
+			margin:0;
+			padding: 0;
+		}
+		
+		div{
+			background-color: red;
+			position: absolute;
+			top:0px;
+			left: 0px;
+			width: 100px;
+			height: 100px;
+		}
+	</style>
+</head>
+<body>
+		<div id="box"></div>
+</body>
+<script type="text/javascript">
+var oBox=document.getElementsByTagName('div');
+document.onmousemove=function(ev){
+	oBox.style.left=getScrollLeft()+ev.clientX+'px';
+	oBox.style.top=getScrollLeft()+ev.clientY+'px';
+	
+}
+</script>
+</html>

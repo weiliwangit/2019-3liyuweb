@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>parseInt 和 parseFloat函数</title>
+	<style type="text/css">
+		*{
+			margin:0px;
+			padding:0px;
+		}
+	</style>
+</head>
+<body>
+	<input type="text" name="" id="txt1" >
+	<input type="text" name="" id="txt2">
+	<button id="btn" >求和</button>
+</body>
+<script type="text/javascript">
+	var oTxt1=document.getElementById('txt1')
+	var oTxt2=document.getElementById('txt2')
+	var oBtn=document.getElementById('btn')
+	oBtn.onclick=function(){
+		// var oVal1 = parseInt  (oTxt1.value );
+		// var oVal2 = parseInt (oTxt2.value );
+		// 可以把数字直接转化成整数
+		// alert(typeof oVal1)
+		var oVal1=parseFloat(oTxt1.value );
+		var oVal2=parseFloat(oTxt2.value );
+		// 小数 整数 都可以
+		// parseInt 和parseFloat这两个函数里面输入的第一个字符不是数字或负号加数字,那么控制台会打印出NaN(意四是不是一个数子,属于Number类型),如果输入的字符中间有不是数字的字符,那么他会在不是数字的地方停下来,然计算,不数字的字符是不影响这两个函数的计算.
+		// alert(oVal1 + oVal2);
+		// 在这个阶段不要求掌握if
+		// 双等号有判断的意思,同时等与的意思还存在,相当于双等号既有判断又有等号的意思.
+		// 如果在这里用双等号那么是数字就会发一个true不是一个数字就会发一个false,什么呢,如alert(oVal1==1)就会返回一个true,alert(oVal1==NaN或者非数字字符)就会返回一个false,这个返回值不是isNaN返回的是这个双等号加上这个运算环境返回的.
+		// 在这里呢，NaN不等于NaN,别问为啥，记住就行。
+		// isNaN它的意思是  是一个 不是数字 它起判断作用
+
+		if(isNaN(oVal1)){
+             alert("请在第一个输入框中输入正确数字")
+		}else if(isNaN(oVal2)){
+             alert("请在第二输入框中输入正确数字")
+		}else {
+			alert(oVal1 + oVal2)
+		}
+	}
+</script>
+</html>

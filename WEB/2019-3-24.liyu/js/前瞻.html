@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>前瞻</title>
+</head>
+<body>
+	
+</body>
+<script type="text/javascript">
+	//1正向前瞻
+	var str="35c4w758v69t4r43f36dt";
+	var reg=/[0-9](?=[a-z])/g;
+	//正向前瞻：中括号里是要被替换成*的，小括号里是条件。（解释成0-9任意数字前面是a-z任意一字母的数字被替换成*）
+	console.log(str.replace(reg,"*"));
+	//2负向前瞻
+	var str="35c4w758v69t4r43f3#6#dt";
+	var reg2=/[0-9](?![a-z])/g;
+	//负向前瞻：中括号里是要被替换成*的，小括号里是条件。（解释成0-9任意数字前面不是a-z任意一字母的数字被替换成*）
+	console.log(str.replace(reg2,"*"));
+</script>
+</html>

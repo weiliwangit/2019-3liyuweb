@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>排序</title>
+</head>
+<body>
+	
+</body>
+<script type="text/javascript">
+	var arr=[1,5,9,7,6,3,4,2]
+	var tmp=0;
+	// console.log(arr);
+	for(var i=0;i<arr.length;i++){
+		for(var j=i+1;j<arr.length;j++){
+			if(arr[i] > arr[j]){
+               	tmp=arr[i];
+               	arr[i]=arr[j];
+               	arr[j]=tmp;
+			}
+		}
+	}
+	console.log(arr);
+
+	var arr=[17,89,46,74,35,28,14,67]
+	var tmp=0;
+	for(var i=0;i<arr.length;i++){
+		for(var j=i+1;j<arr.length;j++){
+			if(arr[i]>arr[j]){
+			   tmp=arr[i];
+               arr[i]=arr[j];
+               arr[j]=tmp;
+
+			}
+		}
+	}
+	console.log(arr);
+	// var arr=[1,58,37,91,7,64];
+	// var result=arr.reverse();
+	// console.log(result);
+	// var arr1=arr.sort();
+	// console.log(arr1);
+</script>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>获取元素返回结果.html</title>
+</head>
+<body>
+	<div id="box" class="bb">
+		
+	</div>
+</body>
+<script type="text/javascript">
+	var oBox=document.getElementById('box')
+	console.log('aa',oBox);
+	console.log('aa',typeof oBox);
+
+	var oBox=document.getElementsByTagName('bb');
+	console.log('bb',oBox);
+	console.log('bb',typeof oBox);
+	
+	oBox=document.querySelector('div');
+	console.log('cc',oBox);
+	console.log('cc',typeof oBox);
+</script>
+</html>

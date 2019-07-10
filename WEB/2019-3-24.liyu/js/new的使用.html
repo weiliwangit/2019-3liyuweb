@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+</body>
+<script type="text/javascript">
+	function show(){
+ //    使用new后会默认生成一个show{}对象；
+	// this=show;
+	// return this ;
+		console.log("aa",this);
+	}
+	// window.show(）wiondow在调用该函数
+	// show(1)//函数调用
+	//没返回结果
+	var obj =new show();
+	
+	// 使用new后会默认生成一个show{}对象；
+	// this=show{};
+	// return this ;
+</script>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>照片墙</title>
+	<style type="text/css">
+	*{
+		margin:0px;
+		padding:0px;
+	}
+		.a{
+			width: 100%;
+			height: 400px;
+			background-color: skyblue;
+		}
+		.a1{
+
+			margin:0px auto;
+			width: 600px;
+			height: 400px;
+			line-height: 400px;
+			
+
+		}
+		
+		img{
+			width: 100px;
+			height: 200px;
+			vertical-align: middle;
+			margin-left: 40px;
+			border:2px solid #fff;
+			opacity:0.5;
+			position: relative;
+			box-sizing: border-box;
+			
+		}
+        .b1{
+        	transform: rotate(30deg);
+        	
+        }
+        .b2{
+        	transform: rotate(-30deg);
+        	
+        }
+        .b3{
+        	transform: rotate(30deg);
+        	
+        }
+        .b4{
+        	transform: rotate(45deg);
+
+        }
+   
+        .a1 img:hover{
+        	transform: rotate(0deg) scale(1.5,1.5);
+        	opacity:1;
+        	transition:all 3s linear;
+        	z-index: 999；
+        }
+	</style>
+</head>
+<body>
+	<div class="a">
+            <div class="a1">
+            	<img src="img/1.jpg" class="b1">
+            	<img src="img/2.jpg" class="b2">
+            	<img src="img/3.jpg" class="b3">
+            	<img src="img/4.jpg" class="b4">
+            </div>
+		
+	</div>
+</body>
+</html>

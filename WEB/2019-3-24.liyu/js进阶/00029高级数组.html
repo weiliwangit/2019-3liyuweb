@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>高级数组</title>
+</head>
+<body>
+	
+</body>
+<script type="text/javascript">
+	var arr=[1,62,27,46,68,24,34];
+	arr.forEach(function(value,index){
+		console.log("forEach",value,index);
+	})//此方法没有返回值
+	var result=arr.map(function(value,index){
+		console.log("map",value,index);
+		return value//有返回值
+	})
+	console.log("map",result);
+	var result=arr.filter(function(value,index){
+		console.log("filter",value,index);
+		return value>20;
+	})
+	console.log("filter",result);
+	var result=arr.every(function(value,index){
+		console.log("every",value,index);
+		return value>20;
+	})
+	console.log("every",result);
+	var result=arr.some(function(value,index){
+		console.log("some",value,index);
+		return value>20;
+	})
+	console.log("some",result);
+</script>
+</html>

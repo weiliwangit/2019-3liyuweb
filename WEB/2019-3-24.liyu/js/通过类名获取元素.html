@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>通过类名获取元素</title>
+</head>
+<body>
+	<ul id="list">
+		<li class="li1">0</li>
+		<li>1</li>
+		<li class="li1">2</li>
+		<li>3</li>
+		<li class="li1">4</li>
+		<li>5</li>
+	</ul>
+</body>
+<script type="text/javascript">
+	var oUl=document.getElementById('list');
+	var oLi=document.getElementsByClassName('li1');
+    function oClassName(oParent,oClass){
+    	var oValue=[];
+    	oNodes=oParent.children;
+    	console.log(oNodes)
+    	for(var i=0;i<oNodes.length;i++){
+    		// 注意：i<数组的长度，不要写成dom元素
+    		console.log('dd')
+    		if(oNodes[i].className==oClass){
+    			console.log('cc')
+            	oValue.push(oNodes[i]);
+    		}
+    	}
+    	console.log('bb',oValue)
+    	return oValue;
+    }
+    console.log('aa',oClassName(oUl,"li1"));
+</script>
+</html>

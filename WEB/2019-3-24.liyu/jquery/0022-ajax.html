@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>0022-ajax.html</title>
+</head>
+<body>
+	<button>请求数据</button>
+</body>
+<script type="text/javascript" src="./jquery-1.12.4.js"></script>
+<script>
+	$(function(){
+		$("button").on("click",function(){
+			$.ajax({
+			url:"./0022-ajax.json",
+			type:"POST",
+			date:"{name:'tom',}",
+			dateType:"text",
+			success:function(data,statusMsg,jqXHR){
+				console.log('1:::');
+				console.log(data);
+				console.log('statusMsg::',statusMsg);
+				console.log('jqXHR::',jqXHR);
+				}
+			})
+		})
+		
+	})
+</script>
+</html>

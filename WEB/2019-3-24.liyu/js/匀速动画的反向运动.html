@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		#box{
+			position: absolute;
+			top: 0px;
+			left: 800px;
+			width: 100px;
+			height: 100px;
+			background-color: red;
+		}
+		.line{
+			position: absolute;
+			top: 0px;
+			left: 400px;
+			height: 400px;
+			width: 1px;
+			background-color: red;
+		}
+	</style>
+</head>
+<body>
+	<button id="btn">fanxiang</button>
+	<div id="box"></div>
+	<div class="line"></div>
+</body>
+<script type="text/javascript">
+	var oBox=document.getElementById('box');
+	var oBtn=document.getElementById('btn');
+	timer=null;
+	iSpeed=0;
+	
+	// oBtn.onclick = function(){
+	// 	clearInterval(timer);
+	// 	timer = setInterval(function(){
+	// 		console.log("tiemr::",timer);
+	// 		if(oBox.offsetLeft == 400){
+	// 			clearInterval(timer);
+	// 		}else{
+	// 			oBox.style.left = oBox.offsetLeft - 10 + "px";
+	// 		}
+	// 	},30)
+	// }
+	oBtn.onclick=function(){
+		clearInterval(timer);
+		iSpeed=-8;
+		timer=setInterval(function(){
+			if(oBox.offsetLeft==400){
+				clearInterval(timer);
+			}else {
+				oBox.style.left=oBox.offsetLeft+iSpeed+"px";
+			}
+		}, 30)
+	}
+</script>
+</html>

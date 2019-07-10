@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>不定参数求和</title>
+</head>
+<body>
+	
+</body>
+<script type="text/javascript">
+	// function sum (n1,n2){
+	// console.log(arguments)
+	// 	var result=0;
+	// 	result=n1+n2;
+	// 	alert(result);
+	// }
+	// sum(1,2);
+	function sum(){
+		console.log(arguments)
+		var result=0;
+		for( var i=0;i<arguments.length;i++){
+            result=result+arguments[i];
+		}
+		alert(result);
+	}
+	sum(2,1,3,167369);
+	// function fact(num){
+	// 	if(num==1){
+	// 		return 1;
+	// 	}else{
+	// 		return num*fact(num-1)}
+	// }
+	// fact(8);
+	// console.log(fact(8));
+</script>
+</html>

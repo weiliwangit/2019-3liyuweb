@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>递归调用</title>
+</head>
+<body>
+	
+</body>
+<script type="text/javascript">
+	function fact(num){
+      if(num==1){
+      	return 1;
+      } 
+      // console.log(arguments.callee)
+      // return num*fact(num-1)
+      return num*arguments.callee(num-1)
+      // 在这里为什么用return，console.log或者alert呢？
+	}
+	console.log(fact(5))
+	// 递归调用必须要有终止条件，否则会爆栈。
+	// 为了保险起见需要将 fact(num-1)的fact换成 arguments.callee，arguments.callee就代表整个函数，不换单纯的做这个递归函数是没错的，就怕后期对fact进行重新赋值，这时就容易出错。
+</script>
+</html>

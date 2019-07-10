@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>test和exec方法</title>
+</head>
+<body>
+	
+</body>
+<script type="text/javascript">
+	// 一，test方法(匹配到了会返回true,匹配不到会返回false){
+		// test方法测试字符串是否有匹配到正则的字符串,有返回true,没有返回false 。
+
+	// 1非全局匹配(下标一直是零)
+	var str="123gfh7378f4h74";
+	var reg=/\d/;
+	console.log('1',reg.lastIndex);
+	console.log(reg.test(str));
+	console.log('2',reg.lastIndex);
+	console.log(reg.test(str));
+	//2全局匹配（每次匹配，正则上的lastIndex属性就会改变，当匹配不到时会返回重新匹配（相当于循环）。）
+	var str="123gfh7378f4h74";
+	var reg=/\d/g;
+	console.log('a',reg.lastIndex);
+	console.log(reg.test(str));
+	console.log('b',reg.lastIndex);
+	// console.log(str.replace(reg,"*"))
+	console.log(reg.test(str));
+	// console.log(str.replace(reg,"*"))
+	console.log('c',reg.lastIndex);
+	console.log(reg.test(str));
+
+
+	// 二，exec方法（exec方法对字符串执行搜索,并更新正则对象上的lastIndex属性,如果没有匹配的返回null,有的话返回一个数组）{数组的第0个元素是匹配的内容,如果有分组,从下标是1开始是对应分组的内容；index 是匹配内容第一个字符的位置；input 是被搜索的字符串；groups 存放着每个命名分组的名称以及它们匹配到的值,如果没有命名分组则为undefined,命名捕获分组自身的语法是 (?<name>...)，比普通的分组多了一个 ?<name> }
+
+	// 1非全局匹配（从零开始）
+	var str="123gfh7378f4h74";
+	var reg=/\d/;
+	console.log('1',reg.lastIndex);
+	console.log(reg.test(str));
+	console.log('2',reg.lastIndex);
+	console.log(reg.test(str));
+	//2全局匹配
+	var str="123gfh7378f4h74";
+	var reg=/\d/g;
+	console.log('a',reg.lastIndex);
+	console.log(reg.test(str));
+	console.log('b',reg.lastIndex);
+	console.log(reg.test(str));
+	console.log('c',reg.lastIndex);
+	console.log(reg.test(str));
+
+</script>
+</html>

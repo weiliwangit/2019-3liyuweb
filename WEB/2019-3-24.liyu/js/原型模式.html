@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>原型模式</title>
+</head>
+<body>
+	
+</body>
+<script type="text/javascript">
+	// function show(){
+ //        console.log(show.prototype)
+	// }
+	// show();
+	// 所有的函数可以看成构造函数,构造函数有一个prototype,这个构造函数构造出的实例都可以访问prototype
+
+
+// 定义全局函数
+	// function sayName(){
+ //          	console.log("I am" +this.name);
+ //          }
+
+
+	function CreatePerson(name,age){
+          this.name=name;
+          this.age=age;
+	}
+	// 到这工厂函数封装完成，这个函数相当于系统自带的math，date，等等，之差调用了。
+
+
+
+	//CreatePerson上有一个prototype对象,这个对象可以被CreatePerson构建的实例访问,
+	// 所以在prototype对象上添加方法
+    CreatePerson.prototype.sayName = function(){
+    	// console.log(11)
+      console.log("I am" +this.name);
+    };
+    CreatePerson.prototype.legs=2;
+
+
+	// 定义一个变量，也是函数的调用,对象实例都可以访问到prototype的方法和属性
+	var person1 = new CreatePerson("tom",18);
+	person1.sayName();
+	console.log(person1.legs);
+	console.log(person1);
+
+
+
+
+	var person2 = new CreatePerson("leo",20);
+	person2.sayName();
+	console.log(person1.legs);
+	console.log(person2);
+
+
+	console.log(person2.sayName==person1.sayName);//为什么会是个ture呢
+
+
+
+</script>
+</html>

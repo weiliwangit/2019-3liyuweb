@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>显示和隐示</title>
+</head>
+<body>
+	<!-- parseInt（）函数用来转换整数,parsFloat（）函数用来转换整数和小数，如果第一个字符不是数字或者负号加数字,会返回NaN(Not a Number)，从左到右解析直到第一个非数字为止 。 -->
+	<!-- Number（）函数，var a="123";
+	var b=Number(a)
+	console.log(b+1),var b Number有一个返回值，称为var a 的返回值,将纯数字 字符串转换为数字；如果字符串中有非数字的内容，则转换为NaN；如果字符串是一个空串或者是一个全是空格的字符串，则转换为0； -->
+	<!-- true 转成 1,false 转成 0
+	null 转成0
+	undefined转成NaN -->.
+	<!-- toString()方法是将数字类型的数字转换成字符串，转换成的字符串称作数字的返回值，null和undefined这两个值没有toString(括号里填的是进制数)方法，如果调用他们的方法，会报错 -->
+	<!-- String()函数的用法和toString()方法的用法基本相同，null和undefined这两个值有String(括号里填的是进制数)函数值。 -->
+	<!-- 关于运算，数字类型的可以直接加减乘除；字符串的纯数字加发运算则需要转换，减乘除则不需要，因为他们默认做了隐示转换 -->
+	<!-- 任何数据和 +"" 连接到一起都会转换为字符串,内部实现原理和String()函数一样 ,var a=undefined;
+	console.log(b +"")
+	console.log(typeof b)-->
+</body>
+<script type="text/javascript">
+	// var a="123";
+	// var b=Number(a)
+	// console.log(b+1)
+
+	// var a=123;
+	// var b=a.toString()
+	// console.log(b)
+	// console.log(typeof b)
+
+	// var a=null;
+	// var b=String(a)
+	// console.log(b)
+	// console.log(typeof b)
+
+	// var a=undefined;
+	// var b=String(a)
+	// console.log(b)
+	// console.log(typeof b)
+
+ //   var b=undefined;
+	// console.log(b +"")
+	// console.log(typeof b)
+
+
+ //    var b=null;
+	// console.log(b +"")
+	// console.log(typeof b)
+
+	var a=12134;
+	var b=a +":"
+	console.log(b)
+	console.log(typeof b)
+
+</script>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>new和工厂函数</title>
+</head>
+<body>
+	
+</body>
+<script type="text/javascript">
+	function CreatePerson(name,age){
+          this.name=name;
+          this.age=age;
+          this.sayName = function(){
+          	console.log("I am" +this.name);
+          }
+	}
+	// 到这工厂函数封装完成，这个函数相当于系统自带的math，date，等等，之差调用了。
+
+
+
+
+	// 定义一个变量，也是函数的调用
+	var person1 = new CreatePerson("tom",18);
+	person1.sayName();
+	console.log(person1);
+
+
+
+
+	var person2 = new CreatePerson("leo",20);
+	person2.sayName();
+	console.log(person2);
+
+
+	console.log(person2.sayName==person1.sayName);
+</script>
+</html>

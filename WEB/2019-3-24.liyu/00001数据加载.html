@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		.box{
+			width: 100%;
+			height:80px;
+			line-height: 80px;
+			overflow: hidden;
+			background-color: pink;
+		}
+		.item{
+			list-style: none;
+			float: left;
+			margin-left: 200px;
+		}
+		.box-item-fater{
+			position:relative; 
+		}
+		.box-item{
+			position: absolute;
+			top:0;
+			left: 0;
+			width: 600px;
+			height: 0px;
+			overflow: hidden;
+			margin-top: 20px;
+			/*border: 1px solid transparent;*/
+			/*display: none;*/
+		}
+		img{
+			float: left;
+			width: 100px;
+			height: 100px;
+			margin-left: 100px;
+		}
+	</style>
+</head>
+<body>
+	<div class="box-cat">
+		<div class="box">
+			<ul>
+				<li class="item">1</li>
+				<li class="item">2</li>
+				<li class="item">3</li>
+				<li class="item">4</li>
+				<li class="item">5</li>
+				<li class="item">6</li>
+				<li class="item">7</li>
+				<li class="item">8</li>
+			</ul>
+		</div>
+		<div class="box-item-fater">
+			<div class="box-item">
+				<div class="box2">
+					<img src="img/6.jpg">
+					<!-- <p>2999</p> -->
+				</div>
+				<div class="box3">
+					<img src="img/6.jpg">
+					<!-- <p>3999</p> -->
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+<script type="text/javascript">
+	var oLi=document.querySelectorAll('.item');
+	var oBoxItem=document.querySelector('.box-item');
+	var oBoxItemFater=document.querySelector('.box-item-fater');
+	var oBoxCat=document.querySelector('.box-cat');
+	var timer=null;
+	for(i=0;i<oLi.length;i++){
+		oLi[i].onmousemove=function(){
+			clearInterval(timer);
+	        timer=setInterval(function(){
+				oBoxItem.style.height="400px";
+	        },100)
+		}
+		oBoxCat.onmouseout=function(){
+			// clearInterval(timer);
+			oBoxItem.style.height="0";
+		}
+	}
+</script>
+</html>

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>碰撞检测</title>
+	<style type="text/css">
+		*{
+			margin: 0px;
+			padding: 0px;
+		}
+		#box{
+			position: absolute;
+			top:0px;
+			left: 0px;
+			width: 100px;
+			height: 100px;
+			background-color: red;
+		}
+		#box2{
+			position: absolute;
+			top: 50px;
+            left: 50%;
+            margin-left: -200px;
+			width: 400px;
+			height: 400px;
+			background-color: green;
+		}
+	</style>
+</head>
+<body>
+	<div id="box"></div>
+	<div id="box2"></div>
+</body>
+<!-- <script type="text/javascript">
+	function checkBump(odj1,obj2){
+		if(obj1.offsetWith+obj1.offsetLeft>=obj2.offsetLeft
+			&&obj1.offsetHeight+obj1.offsetTop>=obj2.offsetTop
+			&&obj2.offsetWith+obj2.offsetLeft>=obj1.offsetLeft
+			&&obj2.offsetHeight+obj2.offsetTop>=obj1.offsetTop){
+			return true;
+		}else{
+			return false;
+		}
+	function checkBump(obj1,obj2){
+		if(obj1.offsetLeft+obj1.offsetWidth>=obj2.offsetLeft
+			&&obj1.offsetTop+obj1.offsetHeight>=obj2.offsetTop
+			&&obj2.offsetLeft+obj2.offsetWidth>=obj1.offsetLeft
+			&&obj2.offsetTop+obj2.offsetHeight>=obj1.offsetTop
+			){
+			return true;
+		}else{
+			return false;
+		}
+	}
+	}
+	var oBox=document.getElementById('box');
+	var oBox2=document.getElementById('box2');
+	document.onmousemove=function(ev){
+        oBox.style.left=ev.clientX+"px";
+        oBox.style.top=ev.clientY+"px";
+        if(checkBump(oBox,oBox2)){
+        	oBox2.style.backgroundColor = "pink"
+        }else {
+        	oBox2.style.backgroundColor="blue"
+        }
+	}
+
+</script> -->
+<script>
+	var oBox=document.getElementById('box');
+	var oBox2=document.getElementById('box2');
+
+	function checkBump(obj1,obj2){
+		if(obj1.offsetLeft+obj1.offsetWidth>=obj2.offsetLeft
+			&&obj1.offsetTop+obj1.offsetHeight>=obj2.offsetTop
+			&&obj2.offsetLeft+obj2.offsetWidth>=obj1.offsetLeft
+			&&obj2.offsetTop+obj2.offsetHeight>=obj1.offsetTop
+			){
+			return true;
+		}else{
+			return false;
+		}
+	}
+	oBox.onmousedown=function(ev){
+		console.log(ev.clientX-oBox.offsetLeft,ev.clientY-oBox.offsetTop);
+		var disX=ev.clientX-oBox.offsetLeft;
+		var disY=ev.clientY-oBox.offsetTop;
+		var l=0;
+		var t=0;
+
+		document.onmousemove=function(ev){
+			l=ev.clientX-disX;
+			t=ev.clientY-disY;
+			if(l<0){
+				l=0;
+			}else if(l>window.innerWidth-oBox.offsetWidth){
+				l=window.innerWidth-oBox.offsetWidth;
+			}
+			if(t<0){
+				t=0;
+			}else if(t>window.innerHeight-oBox.offsetHeight){
+				t=window.innerHeight-oBox.offsetHeight;
+			}
+			oBox.style.left=l+'px';
+			oBox.style.top=t+'px';
+
+		// 	if(oBox.offsetLeft+oBox.offsetWidth>=oBox2.offsetLeft
+		// 		&&oBox.offsetTop+oBox.offsetHeight>=oBox2.offsetTop
+		// 		&&oBox2.offsetLeft+oBox2.offsetWidth>=oBox.offsetLeft
+		// 		&&oBox2.offsetTop+oBox2.offsetHeight>=oBox.offsetTop
+		// 		){
+		// 		oBox2.style.background="pink";
+		// 	}else{
+		// 		oBox2.style.background="yellow";
+		// 	}
+			if(checkBump(oBox,oBox2)){
+				oBox2.style.background="pink"
+			}else{
+				oBox2.style.background="yellow"
+			}
+		}
+		document.onmouseup=function(){
+			document.onmousemove=null;
+			document.onmouseup=null;
+		}
+	}
+</script>
+
+</html>

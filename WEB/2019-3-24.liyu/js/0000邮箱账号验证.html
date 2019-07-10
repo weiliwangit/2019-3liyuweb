@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>邮箱账号验证</title>
+</head>
+<body>
+	<input type="text" name="" id="txt1">
+	<button id="btn">验证</button>
+	<input type="text" name="" id="txt2">
+</body>
+<script type="text/javascript">
+	var oTxt1=document.getElementById('txt1');
+	var oTxt2=document.getElementById('txt2');
+	var oBtn=document.getElementById('btn');
+	oBtn.onclick=function(){
+		var val=oTxt1.value;
+		var reg=/^[a-z0-9_]+@[a-z0-9_]+\.[a-z]{2,5}/;
+		// var str="12345werty3456"
+		// var reg=/[0-9]+/;
+		console.log(str.replace(reg,"*"));
+		// console.log(val.replace(reg,"*"))
+		if(reg.test(val)==true){
+	        alert("hefa");
+		}else{
+			alert("buhefa");
+		}
+	}
+</script>
+</html>

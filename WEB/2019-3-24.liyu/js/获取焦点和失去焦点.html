@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>获取焦点和失去焦点</title>
+</head>
+<body>
+	<form>
+		用户名：<input type="text" name="username" autocomplete="off">
+		<p id="msg"></p>
+	</form>
+</body>
+<script type="text/javascript">
+	var oForm=document.forms[0];
+	// console.log(oForm)
+	var oName=oForm.username;
+	var oMsg=document.getElementById('msg');
+    oName.onfocus=function(){
+    oMsg.style.color="red";
+    oMsg.innerHTML="请输入7-14位字符";
+    }
+    oName.onblur=function(){
+    	var str=oName.value;
+    	var reg=/^.{7-14}$/;
+    	if(!reg.test(str)){
+	    	oMsg.innerHTML="输入字符不正确";	
+    	}else{
+    		oMsg.innerHTML="正确";
+    	}
+    }
+
+</script>
+</html>

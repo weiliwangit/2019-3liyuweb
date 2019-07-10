@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>原型</title>
+</head>
+<body>
+	
+</body>
+<script type="text/javascript">
+	function person(name,age){
+		this.name=name;
+		this.age=age;
+	}
+	
+	person.prototype.sayName=function(){
+		console.log('i am'+"tom");
+	}
+	var p1=new person("tom",18);
+	p1.sayName();
+	console.log(person.prototype)
+	//每个函数上都有prototype,prototype是一个对象,
+	//person.prototype里面有constructor和__proto__两个属性，
+	//其中constructor指向函数自身也就是person这个函数，
+	//__proto__指向person.prototype;
+	//console.log(person.prototype.__proto__===Object.prototype);
+
+
+	//实例p1上的__proto__指向person.prototype;person.prototype上的__proto__指向Object.prototype;Object.prototype上的__proto__指向null.
+	//注意Object中o要大写
+	// 原型和实例上才有__proto__
+</script>
+</html>

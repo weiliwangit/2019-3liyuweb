@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>共通事件属性</title>
+	<style type="text/css">
+		#a{
+			width: 400px;
+			height: 400px;
+			margin:0 auto;
+			background-color: red;
+		}
+		#b{
+			width: 100px;
+			height: 100px;
+			margin:0 auto;
+			background-color: pink;
+		}
+	</style>
+</head>
+<body>
+	<div id="a">
+		<div id="b"></div>
+	</div>
+</body>
+<script type="text/javascript">
+	var A=document.getElementById('a');
+	var B=document.getElementById('b');
+	A.onclick= function(ev){
+		console.log(ev.target);
+		console.log(ev.currentTarget);
+		console.log(ev.type)
+	}
+</script>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>0011-jquery-caozuo-css.html</title>
+	<style type="text/css">
+		.box1{
+			width: 100px;
+			height: 100px;
+			background: red;
+		}
+		.box2{
+			width: 100px;
+			height: 100px;
+			background:green;
+		}
+	</style>
+</head>
+<body>
+	<div class="box1">div1</div>
+	<div class="box2">div2</div>
+</body>
+<script type="text/javascript" src="./jquery-1.12.4.js"></script>
+<script>
+	$(function(){
+		function fn(){
+			alert("da爷爷")
+		}
+		$("div").on("click",function(){
+			alert("爷爷")
+		});
+		$("div").on("click",function(){
+			alert("爸爸")
+		});
+		$("div").on("click",fn)
+		$("div").on("mouseover",function(){
+			alert("老爷")
+		})
+		$("div").on("mouseout",function(){
+			alert("咋了孙子")
+		})
+		// $('div').off();
+		$('div').off("mouseover");
+		$('div').off("click",fn);
+
+
+	})
+</script>
+</html>

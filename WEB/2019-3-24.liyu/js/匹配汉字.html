@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>匹配汉字</title>
+</head>
+<body>
+	
+</body>
+<script type="text/javascript">
+	var str="你好hello世界";
+	var reg=/[\u4e00-\u9fa5]/g;
+	function getlen(str){
+		return str.replace(reg,"aa").length
+	}
+	getlen(str);
+	console.log(getlen(str));
+</script>
+</html>

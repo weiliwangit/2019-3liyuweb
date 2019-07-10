@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>获取表单</title>
+</head>
+<body>
+	<form>
+		<div>
+			用户名：<input type="text" name="username">
+		</div>
+		<div>
+			密码：<input type="password" name="keyword">
+		</div>
+	</form>
+	<form>
+		<div>
+			用户名：<input type="text" name="username">
+		</div>
+		<div>
+			密码：<input type="password" name="keyword">
+		</div>
+	</form>
+</body>
+<script type="text/javascript">
+	//返回一个数组
+	var oTxt=document.forms;
+	console.log(oTxt);
+    // var oTxt2=document.forms[1];
+    // console.log(oTxt2);
+    var oTxt3=document.forms[1].elements;
+    console.log(oTxt3);
+    // var oTxt4=document.forms[1].elements[0];
+    //同名的表单元素返回一个节点集合
+    // console.log(oTxt4);
+    var oTxt5=document.forms[1].elements["username"];
+    console.log(oTxt5);
+</script>
+</html>

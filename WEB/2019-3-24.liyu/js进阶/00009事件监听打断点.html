@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>事件监听打断点</title>
+</head>
+<body>
+	<button id="btn">dianji</button>
+	<input type="text" name="" id="txt">
+	<input type="text" name="" id="txt1">
+</body>
+<script type="text/javascript">
+	var oBtn=document.getElementById('btn');
+    var oTxt=document.getElementById('txt');
+    var oTxt1=document.getElementById('txt1');
+    oBtn.onclick=function(){
+      oTxt1.value=oTxt.value;
+    }
+    // sources下的Event 监听断点，有各种事件
+</script>
+</html>

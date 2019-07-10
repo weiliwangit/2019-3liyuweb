@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>search</title>
+	<link rel="stylesheet" href="css/reset.css">
+	<style type="text/css">
+		form{
+			margin-top: 10px;
+			margin-left: 50px;
+		}
+		ul{
+			margin-left: 50px;
+		}
+		.search-input{
+			padding-left: 5px;
+		}
+	</style>
+</head>
+<body>
+	<form action="https://s.taobao.com/search" class="search-form">
+		<input type="tetx" name="q" class="search-input" autocomplete="off">
+		<!-- 注意name的值必须和jsonp中的地址里面的q一致 -->
+		<input type="submit" autocomplete="off" class="search-btn">
+	</form>
+	<ul class="search-layer">
+		<!-- <li>beizi</li> -->
+	</ul>
+</body>
+<script src="js/jquery-1.12.4.js"></script>
+<script>
+	var timer=0;
+	var jqXHR=null;
+	var ca
+	function submit(){
+		if(!getInputValue()){
+			return false;
+		}
+		$(".search-form").trigger("submit");
+	};
+	function getInputValue(){
+		return $.trim($(".search-input").val());
+	}
+	$(function(){
+		var $elem=$(".search-btn");
+		$elem.on("click",submit);
+		$(".search-input").on("input",function(){
+			if(getInputValue()==""){
+				return;
+			};
+			if(jqXHR){
+				jqXHR.abort();
+			}
+			clearTimeout(timer);
+			timer=setTimeout(function(){
+				jqXHR=$.ajax({
+				url:'https://suggest.taobao.com/sug?q='+ getInputValue(),
+				//注意url的写法
+				dataType:"jsonp",
+				jsonp:"callback",
+				success:function(data,statusMsg,jqXHR){
+					console.log(11);
+					// console.log(statusMsg);
+					// console.log(jqXHR);
+				//生成html结构
+					var html="";
+						for(var i=0;i<data.result.length;i++){
+							if(i>=8) break;
+							html+="<li class='search-item'>"+data.result[i][0]+"<li>"
+						}
+						//插入
+						$(".search-layer").html(html);
+						// $(document).on('click',function(){
+						// $(".search-layer").hide();
+						// });
+						// $(".search-input").on('focus',function(){
+						// $(".search-layer").show();
+						// })
+				},
+				error:function(err){
+					// console.log(err);
+				}
+			})
+			}, 800)
+			$(document).on('click',function(){
+				$(".search-layer").slideUp();
+			});
+			$(".search-input").on('focus',function(){
+				$(".search-layer").show();
+			});
+			$(".search-input").on('click',function(ev){
+				ev.stopPropagation();
+			});
+		});
+		$(".search-layer").on('click','.search-item',function(){
+				$(".search-input").val($(this).html());
+				setTimeout(submit,300);	
+		});
+
+	});
+</script>
+</html>

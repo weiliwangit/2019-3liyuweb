@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>动态原型模式</title>
+</head>
+<body>
+	
+</body>
+<script type="text/javascript">
+	function CreatePerson(name,age){
+          this.name=name;
+          this.age=age;
+          if( !CreatePerson.prototype.sayName){
+          	console.log(11);
+          	  CreatePerson.prototype.sayName = function(){
+            console.log("I am" +this.name);
+            }
+        }
+          
+	}
+    
+    
+
+
+	var person1 = new CreatePerson("tom",18);
+	person1.sayName();
+	console.log(person1);
+
+
+	var person2 = new CreatePerson("leo",20);
+	person2.sayName();
+	console.log(person2);
+
+
+	console.log(person2.sayName==person1.sayName);//为什么会是个ture呢
+
+   var person3= new CreatePerson("jans",38);
+   person3.sayName();
+   console.log(person3);
+</script>
+</html>

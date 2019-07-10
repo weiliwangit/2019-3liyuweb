@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>00017改变this指向</title>
+</head>
+<body>
+	
+</body>
+<script type="text/javascript">
+	function person(n1,n2){
+		console.log(this,n1,n2);
+	}
+	/*
+	person(1,2);//window.shaow()
+	person.call();//什么也不写this指向window
+	console.log(this)
+	person.call(null);//null也指向window
+	*/
+    person.call();//（对象（如果第一个传的不是一个对象，系统会默认把传入的转化成一个对象），函数的参数），this指向对象
+    person.apply();//第一个参数是数组，第二个参数是数组，它和call的用法一样。
+ 
+    person.bind(this);
+    //person.bind()返回一个自身函数（括号里什么也不写）；
+    //person.bind()();//第一个括号填一个对象，用来改变this的指向,(第二个括号是函数的调用
+    //person.call()和 person.apply()都会执行person这个函数，person.bind()不会执行
+</script>
+</html>

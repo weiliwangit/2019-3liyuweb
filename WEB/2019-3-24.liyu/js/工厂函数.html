@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>工厂函数</title>
+</head>
+<body>
+	
+</body>
+<script type="text/javascript">
+function CreateFn(name,age){
+	var obj={};
+    obj.name=name;
+    obj.age=age;
+    obj.sayName=function(){
+    console.log('i am '+this.name);
+    }
+    obj.sayAge=function(){
+    console.log('i am '+this.age);	
+    }
+	return obj ;
+}
+var Fn1=CreateFn("tom",18);
+Fn1.sayName();
+Fn1.sayAge();
+console.log(Fn1);
+
+var Fn2=CreateFn("leo",88);
+Fn2.sayName();
+Fn2.sayAge();
+console.log(Fn2);
+
+console.log(Fn2.sayName==Fn1.sayName);
+/*为什么，会返回一个false，因为执行Fn1时，调用了一次函数，生成一个obj，
+执行fn2时调用了一次函数，生成一个obj，
+两次生成的obj，并不相同，所以返回一个false*/
+</script>
+</html>

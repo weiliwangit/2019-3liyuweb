@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>函数节流</title>
+	<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		body{
+			height: 3000px;
+		}
+	</style>
+</head>
+<body>
+	
+</body>
+<script type="text/javascript">
+	// var i=0;
+	// function throttle(fn,wait){
+	// 	var lastTime=Date.now();
+ //        return function(){
+ //        	var nowTime=Date.now();
+ //        	if(nowTime-lastTime>wait){
+ //        		fn();
+ //        		lastTime=Date.now();
+	//         }
+	//     }
+	// }
+	// window.onscroll=throttle(function(){
+	// 	console.log(i++);
+	// },1000)
+	var i=0;
+	function throttle(fn,wait){
+	    var lastTime=Date.now();
+	    return function(){
+		    var	nowTime=Date.now();
+		    if(nowTime-lastTime>wait){
+		    	fn();
+		    	lastTime=Date.now();
+			}
+
+	    }
+	}
+	window.onscroll=throttle(function(){
+		console.log(i++);
+	},1000)
+	// window.onscroll=throlle()和window.onscroll=throlle是有区别的，前者是直接调用，后作者是的关于这个函数
+</script>
+</html>

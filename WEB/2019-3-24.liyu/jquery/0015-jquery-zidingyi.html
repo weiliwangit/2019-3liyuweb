@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>0011-jquery-zidingyishijian.html</title>
+	<style type="text/css">
+		.box1{
+			width: 100px;
+			height: 100px;
+			background: red;
+		}
+		.box2{
+			width: 100px;
+			height: 100px;
+			background:green;
+		}
+	</style>
+</head>
+<body>
+	<div class="box1">div1</div>
+	<div class="box2">div2</div>
+</body>
+<script type="text/javascript" src="./jquery-1.12.4.js"></script>
+<script>
+	$(function(){
+		$("div").on("chifan",function(ev,name){
+			alert(this.name+"吃饭");
+		})
+		//在自定义事件中传参数时第一个参数必须是ev事件，记住就行
+		$("div").trigger("chifan","tom")
+	})
+</script>
+</html>

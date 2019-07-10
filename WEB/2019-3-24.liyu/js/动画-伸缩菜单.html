@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>动画-伸缩菜单</title>
+	<style type="text/css">
+		#box{
+			position: absolute;
+			top:0;
+			left: -400px;
+			width: 400px;
+			height: 400px;
+			background-color: red;
+		}
+		#box2{
+			position: absolute;
+			top:0;
+			right:-100px;
+			width: 100px;
+			height: 400px;
+			background-color:black;
+		}
+	</style>
+</head>
+<body>
+	<div id="box">
+		<div id="box2"></div>
+	</div>
+	
+</body>
+<script type="text/javascript">
+	var oBox=document.getElementById('box');
+	var oBox2=document.getElementById('box2');
+	var timer=null;
+	var iSpeed=0;
+	oBox.onmouseover=function(){
+		clearInterval(timer);
+		iSpeed=7;
+		timer=setInterval(function(){
+			if(oBox.offsetLeft<0){
+				iSpeed=7;
+			}else {
+				iSpeed=-7;
+			}
+			if(Math.abs(0-oBox.offsetLeft)<Math.abs(iSpeed)){
+				oBox.offsetLeft=0+"px";
+				clearInterval(timer);
+			}else {
+				oBox.style.left=oBox.offsetLeft+iSpeed+'px';
+			}
+		},30)
+	}
+	oBox.onmouseleave=function(){
+		clearInterval(timer);
+		iSpeed=7;
+		timer=setInterval(function(){
+			if(oBox.offsetLeft<-400){
+				iSpeed=7;
+			}else {
+				iSpeed=-7;
+			}
+			if(Math.abs(-400-oBox.offsetLeft)<Math.abs(iSpeed)){
+				oBox.offsetLeft=-400+"px";
+				clearInterval(timer);
+			}else {
+				oBox.style.left=oBox.offsetLeft+iSpeed+'px';
+			}
+		},30)
+	}
+</script>
+</html>

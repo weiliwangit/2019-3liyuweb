@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>删除父元素</title>
+</head>
+<body>
+	<ul id="de">
+		<li>1<a href="#">删除</a></li>
+		<li>2<a href="#">删除</a></li>
+		<li>3<a href="#">删除</a></li>
+		<li>4<a href="#">删除</a></li>
+	</ul>
+</body>
+<script type="text/javascript">
+	var oLi=document.getElementsByTagName('li')
+	var oA=document.getElementsByTagName('a')
+	for(i=0;i<oLi.length;i++){
+		oA.onclick=function () {
+		parentNode.removeChild(this.oLi);
+		}
+	}
+</script>
+</html>

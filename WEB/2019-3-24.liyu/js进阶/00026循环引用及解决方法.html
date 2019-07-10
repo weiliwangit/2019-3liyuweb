@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>00026循环引用及解决方法</title>
+</head>
+<body>
+	<button id="btn">按钮</button>
+</body>
+<script type="text/javascript">
+	bindEvent();
+	function bindEvent(){
+		var oBtn=document.getElementById("btn");
+		var id=oBtn.id;//解决方法
+		oBtn.onclick=function(){
+			// alert(oBtn.id);这时候会造成引用计数的弊端循环引用
+			alert(id);
+			oBtn=null;//解决方法
+		}
+	}
+</script>
+</html>

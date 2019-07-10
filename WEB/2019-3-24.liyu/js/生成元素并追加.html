@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>生成元素并追加</title>
+	<style type="text/css">
+		div{
+			width: 100px;
+			height: 100px;
+			background-color: red;
+		}
+	</style>
+</head>
+<body>
+	
+</body>
+<script type="text/javascript">
+	var oDiv=document.createElement('div');
+	document.body.appendChild(oDiv);
+	// 这个时候浏览器解析script标签时，会把script标签解析成body标签的子元素，不卫神么，记住知道就行
+</script>
+</html>

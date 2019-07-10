@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>表单标签<!-- 是用来搜集用户信息， --></title>
+</head>
+<body>
+	<form action="http://www.kuazhu.com" method="get">
+		<!-- form是创建表单，向服务器传输数据 -->
+		
+	    <p>
+	    	<label for="yonghuming">用户名</label>
+		   <input type="text" name="yonghuming" value="" id="yonghuming">
+		<!-- name是用来储存用户名信息的，value是一个用户名默认的名字 -->
+	    </p>
+		<p>
+		   密码<input type="password"  name="mima" value="">
+		</p>
+		<p>
+		   <input type="submit" value="提交">
+		</p>
+		<p>
+		  性别:男<input type="radio"  name="sex" value="" checked="checked">
+		     女<input type="radio" name="sex" value="">
+		     保密 <input type="radio" name="sex" value="">
+		</p>
+        <p>
+        	爱好:篮球<input type="checkbox" name="aihao" value="lanqiu" >
+        </p>
+       <!--  在input标签中都有name和value -->
+       <input type="image" src="./tupian/test.png/">
+
+	</form>
+	
+</body>
+</html>

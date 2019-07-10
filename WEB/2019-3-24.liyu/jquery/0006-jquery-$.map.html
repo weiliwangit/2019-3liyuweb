@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>	jquery-$.map</title>
+</head>
+<body>
+	<div>1</div>
+	<div>2</div>
+	<div>3</div>
+	<div>4</div>
+	<div>5</div>
+	<div>6</div>
+	<div>7</div>
+	<div>8</div>
+</body>
+<script type="text/javascript" src="./jquery-1.12.4.js"></script>
+<script>
+	$(function(){
+		var arr=[1,2,3,4,5,6,7];
+		var ARR=arr.map(function(value,index){
+			console.log('value index',value,index);
+		});
+		console.log(ARR)
+	})
+</script>
+</html>

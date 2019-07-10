@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>生成随机数</title>
+</head>
+<body>
+	
+</body>
+<script type="text/javascript">
+	// Math.random()直接这样写可以生成一个[0-1)的随机数
+	function getRandom(min,max){
+	return Math.round(Math.random()*(max-min)+min);	
+	}
+	getRandom();
+	console.log(getRandom(200,300));
+</script>
+</html>

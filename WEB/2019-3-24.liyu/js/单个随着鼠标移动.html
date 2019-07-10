@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>随着鼠标移动</title>
+	<style type="text/css">
+		*{
+			margin:0;
+			padding: 0;
+		}
+		
+		#box{
+			background-color: red;
+			position: absolute;
+			top:0px;
+			left: 0px;
+			width: 100px;
+			height: 100px;
+		}
+		#box1{
+			position: relative;
+			width: 100px;
+			height: 100px;
+			background-color: green;
+			margin:200px auto;
+		}
+	</style>
+</head>
+<body>
+		<div id="box"></div>
+		<div id="box1"></div>
+</body>
+<script type="text/javascript">
+var oBox=document.getElementById('box');
+var oBox1=document.getElementById('box1');
+console.log('bb',oBox.offsetwith)
+document.onmousemove=function(ev){
+	oBox.style.left=ev.clientX+'px';
+	oBox.style.top=ev.clientY+'px';
+	if(oBox.offsetleft+oBox.offsetwith>=oBox1.offsetleft){
+	   console.log('aa',a)
+	   oBox1.style.backgroundColor ='black';
+}
+}
+
+</script>
+</html>

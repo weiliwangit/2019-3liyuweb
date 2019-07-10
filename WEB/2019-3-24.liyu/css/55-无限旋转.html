@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>无限旋转</title>
+	<style type="text/css">
+		*{
+			margin:0px;
+			padding:0px;
+		}
+		div{
+			width: 100px;
+			height: 100px;
+			margin:100px auto;
+		    background-color: green;
+		   animation-name: sport;
+		   animation: sport 2s linear infinite;
+		}
+		@keyframes sport {
+            form{
+            	transform: rotate(0deg);
+            }
+            to{
+                transform: rotate(360deg);
+            }
+		}
+
+	</style>
+</head>
+<body>
+	<div></div>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>00012原型属性的添加和修改</title>
+</head>
+<body>
+	
+</body>
+<script type="text/javascript">
+	function person(name,age){
+		this.name=name;
+		this.age=age;
+	}
+	
+	person.prototype.sayName=function(){
+		console.log('i am'+"tom");
+	}
+	person.prototype.LEAGS=2;
+	var p1=new person("tom",18);
+	p1.name="leo";
+	p1.LEAGS=4;
+	console.log(p1)
+	// p1.sayName();
+</script>
+</html>

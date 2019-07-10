@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>0017-donghua.html</title>
+	<style type="text/css">
+		/*div{
+			width: 100px;
+			height: 100px;
+			background: red;
+			display:block;
+		}*/
+		.div2{
+			position: absolute;
+			top: 0;
+			left: 0px;
+			width: 200px;
+			height: 200px;
+			overflow: hidden;
+			border: 1px solid black;
+		}
+		.div2 img:nth-child(1){
+			position: absolute;
+			top: 0px;
+			left: 0px;
+			opacity: 1;
+			display:block;
+		}
+		.div2 img:nth-child(2){
+			position: absolute;
+			top: 0px;
+			left: 0px;
+			opacity: 1;
+			display: none;
+		}
+	</style>
+</head>
+<body>
+	<!-- <button>显示</button>
+	<button>隐藏</button>
+	<button>切换</button>
+	<div></div> -->
+	<div class="div2">
+		<img src="../img/6.jpg" class="img1">
+		<img src="../img/4.jpg" class="img2">
+	</div>
+</body>
+<script type="text/javascript" src="./jquery-1.12.4.js"></script>
+<script>
+	$(function(){
+		// var oImg1=document.querySelector("img1");
+		// var oImg2=document.querySelector("img2")
+		// setInterval(function(){
+		// 	if(oImg1.style.display ='block'){
+		// 		oImg2.style.display ='none';
+		// 		oImg2.style.opacity =0.9;
+		// 	}else {
+		// 		oImg1.style.display ='none';
+		// 		oImg1.style.opacity=0.9;
+		// 	}
+		// },30)
+	})
+</script>
+</html>

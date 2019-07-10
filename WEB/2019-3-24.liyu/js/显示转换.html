@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>显示转换</title>
+</head>
+<body>
+	<input type="text" name="" id="txt">
+	<button id="but">转换</button>
+</body>
+<script type="text/javascript">
+	var oInput=document.getElementById('txt')
+	var oButton=document.getElementById('but')
+	oButton.onclick=function(){
+		alert(parseFloat(oButton.value))
+	}
+</script>
+</html>

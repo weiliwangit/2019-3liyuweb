@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>return</title>
+</head>
+<body>
+	
+</body>
+<script type="text/javascript">
+	function sum(){
+		console.log(arguments)
+		var result=0;
+		for( var i=0;i<arguments.length;i++){
+            result=result+arguments[i];
+		}
+		// alert(result);
+	}
+	console.log(sum(2,1,3,167369));
+	// 情况一，这叫函数执行并调用，是没有返回值的。
+	// 情况二，只写了return没有return后面写值。
+	// 一和二都会返回undefined
+</script>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>0011-jquery-caozuo-css.html</title>
+	<style type="text/css">
+		.box1{
+			width: 200px;
+			height: 200px;
+			background: red;
+		}
+		.box2{
+			width: 100px;
+			height: 100px;
+			background:green;
+		}
+	</style>
+</head>
+<body>
+	<div class="box1">
+		<div class="box2"></div>
+	</div>
+</body>
+<script type="text/javascript" src="./jquery-1.12.4.js"></script>
+<script>
+	$(function(){
+		// var oBox1=document.querySelector(".box1");
+		// var oBox2=document.querySelector(".box2");
+		// oBox2.onclick=function(){
+		// 	alert("儿子");
+		// }
+		// oBox1.onclick=function(){
+		// 	alert("baba");
+		// }当父亲和儿子都设置点击事件时会发生事件冒泡，如果只设置父亲或儿子是不会发生事件冒泡的
+		$(".box1").on("click",function(){
+			alert("baba")
+		})
+	})
+</script>
+</html>

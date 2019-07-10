@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>jquery的$冲突</title>
+</head>
+<body>
+	
+</body>
+
+<script>
+	(function(w){
+		function $(){
+
+		}
+		w.$=$;
+	})(window);
+
+</script>
+<script type="text/javascript" src="./jquery-1.12.4.js"></script>
+<!-- 谁在后面层叠谁 -->
+<script>
+	jQuery.noConflict();//释放$
+	console.log($);
+	//自定义$符号
+	var kz=jQuery.noConflict();
+	console.log(kz);
+</script>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>split</title>
+</head>
+<body>
+	
+</body>
+<script type="text/javascript">
+	// 根据正则匹配的内容把字符串分隔成数组
+	var str="123hf849e488utk8y8";
+	var reg=/\d/g;
+	console.log("aa",str.split(reg));
+
+
+	var str1="123hf8 49e488ut k8y8";
+	var reg2=/\s/g;//(以空白符分隔字符串为数组,'ab c 	d ef      fgh'.split(/\s+/)的结果是["ab", "c", "d", "ef", "fgh"])
+	console.log("bb",str1.split(reg2));
+
+
+	// 回文：aabaa ; 22522;
+	var str3="aabaa";
+	// console.log(str3.split(""));用空可以把字符串拆成一个个的字符串，并且是数组
+	function isH(str){
+		return str3===str3.split("").reverse().join("")//通过“”可以把字符串拼接成一个字符串
+	}
+	isH(str3);
+	console.log(isH(str3));
+</script>
+</html>

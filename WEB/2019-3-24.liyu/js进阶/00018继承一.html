@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>继承1</title>
+</head>
+<body>
+	
+</body>
+<script type="text/javascript">
+	function Person(name,age){
+		// console.log(this)
+		this.name=name;
+		this.age=age;
+	}
+	Person.prototype.sayName=function(){
+		console.log('i am'+this.name);
+	}
+	Person.prototype.sayName=function(){
+		console.log('i am'+this.age);
+	}
+
+	function Student(name,age){
+		// console.log("aa",this)
+		//Person();一个函数调用另一个函数this的指向还是window
+		Person.call(this,name,age);
+	}
+	Student.prototype=Person.prototype;
+	var s1=new Student("tom",18);
+	console.log(s1)
+	// 缺点是，子元素直接复制父元素的指针，改变子元素，父元素也会变化。
+</script>
+</html>

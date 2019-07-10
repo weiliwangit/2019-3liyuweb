@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>去重</title>
+</head>
+<body>
+	
+</body>
+<script type="text/javascript">
+var arr=[23,45,34,36,67,83,89,33,45,23]
+console.log('a',arr);
+function unique(arr){
+	var result=[];
+	console.log('b',result);
+	for(var i=0;i<arr.length;i++){
+		var noWay=false;
+		for( var j=0;j<result.length;j++){
+			if(arr[i]==result[j]){
+	         noWay=true;
+	         break;
+			}
+		}
+		if(!noWay){
+			result.push(arr[i]);
+		}
+       // if(result.indexOf(arr[i],0)==-1){
+       // 	result.push(arr[i]);
+       // } 
+	}
+	console.log('ff',result)
+	return result;
+}
+var newArr=unique(arr);
+console.log('c',newArr);
+</script>
+</html>

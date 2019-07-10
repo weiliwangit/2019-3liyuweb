@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>过滤</title>
+</head>
+<body>
+	<textarea id="txt1" cols="30" rows="10"></textarea>
+	<button id="btn">过滤</button>
+	<textarea id="txt2" cols="30" rows="10"></textarea>
+	<p>我是段落</p>
+</body>
+<script type="text/javascript">
+	var oTxt1=document.getElementById("txt1");
+	var oBtn=document.getElementById("btn");
+	var oTxt2=document.getElementById("txt2");
+	oBtn.onclick=function(){
+		var str=oTxt1.value;
+		var reg=/<[^<>]+>/g;
+        oTxt2.value=str.replace(reg,"*");
+		// oTxt1.value="";
+		
+		
+
+	}
+</script>
+</html>

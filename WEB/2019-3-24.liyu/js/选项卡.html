@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>选项卡</title>
+	<style type="text/css">
+	*{
+		margin:0;
+		padding:0;
+	}
+	#btn{
+		overflow: hidden;
+	}
+		#btn li{
+			float: left;
+			list-style: none;
+			margin-right: 30px;
+			margin-bottom: 10px;
+
+		}
+		#pageface li{
+			height: 100px;
+			width: 100px;
+			border:1px solid black;
+			text-align: center;
+		}
+		.hove{
+			color: red;
+			border-bottom:1px solid red;
+		}
+        #pageface li{
+        	display: none;
+        }
+	</style>
+</head>
+<body>
+	<ul id="btn">
+		<li class="hove";>电视剧</li>
+		<li>电影</li>
+		<li>爱情保卫战</li>
+		<li>跑男</li>
+		<li>爸爸去哪了</li>
+	</ul>
+	<ul id="pageface">
+		<li style="display: block;">1</li>
+		<li>2</li>
+		<li>3</li>
+		<li>4</li>
+		<li>5</li>
+	</ul>
+</body>
+<script type="text/javascript">
+	var oBtn=document.querySelectorAll("#btn li");
+	var oPageface=document.querySelectorAll("#pageface li");
+	for(var i=0;i<oBtn.length;i++){
+		// console.log('for....',i)
+		oBtn[i].index=i;
+		oBtn[i].onmouseover=function () {
+			// console.log('i',i)
+			for(var j=0;j<oBtn.length;j++){
+				oBtn[j].className="";	
+				oPageface[j].style.display = 'none';
+			}
+			this.className="hove";
+			oPageface[this.index].style.display = 'block';
+		}
+	}
+
+</script>
+</html>

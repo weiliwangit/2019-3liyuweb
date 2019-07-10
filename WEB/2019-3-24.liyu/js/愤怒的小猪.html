@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>愤怒的小猪</title>
+	<style type="text/css">
+		*{
+			padding:0;
+			margin:0;
+		}
+		#wrap{
+			position: absolute;
+			top:50px;
+			left: 200px;
+			width: 600px;
+			height: 600px;
+			/*background-color: skyblue;*/
+			border: 1px solid black;
+		}
+		#bird{
+			position: absolute;
+			top:0;
+			left: 50%;
+			margin-left: -25px;
+			width: 50px;
+			height: 50px;
+			background-image:url(img/xiaozhu.jpg);
+			background-repeat:no-repeat;
+			background-size: cover;
+		}
+		.topLine{
+			position: absolute;
+			top:0;
+			left:100%;
+			width:40px;
+			background-color: green;
+		}
+		.bottomLine{
+			position: absolute;
+			bottom:0;
+			left:100%;
+			width:40px;
+			background-color: green;
+		}
+	</style>
+</head>
+<body>
+	<div id="wrap">
+		<div id="bird"></div>
+	</div>
+	<!-- <p>愤怒的小猪重点是var isDie=false;</p> -->
+</body>
+<script type="text/javascript">
+	// 碰撞检测
+	function checkBump(obj1,obj2){
+		if(obj1.offsetLeft+obj1.offsetWidth>=obj2.offsetLeft
+			&&obj1.offsetTop+obj1.offsetHeight>=obj2.offsetTop
+			&&obj2.offsetLeft+obj2.offsetWidth>=obj1.offsetLeft
+			&&obj2.offsetTop+obj2.offsetHeight>=obj1.offsetTop
+			){
+			return true;
+		}else{
+			return false;
+		}
+	}
+
+	//随机生成整数
+	function getRandom(min,max){
+		return Math.round(min+(max-min)*Math.random());
+	}
+
+	var oWrap=document.getElementById('wrap');
+	var oBird=document.getElementById('bird');
+	var iSpeed=0;
+	//游戏死亡
+	var isDie=false;
+	//小鸟生存空间
+	var space=200;
+	var moveBirdTimer=null;
+	var addLineTimer=null;
+	var moveLineTimer=null;
+	//1.设置定时器小鸟每隔一段时间做加速运动
+	clearInterval(moveBirdTimer);
+    moveBirdTimer=setInterval(function(){
+    	iSpeed++;
+    	var iTop=oBird.offsetTop+iSpeed;
+    	if(iTop<0){
+		    iTop=0;
+		    death();
+    	}else if(iTop>oWrap.clientHeight-oBird.clientHeight){
+    		iTop=oWrap.clientHeight-oBird.clientHeight;
+    		death();
+
+    	}
+		oBird.style.top=iTop+"px";
+    },50)
+    //2.游戏结束
+    function death(){
+    	isDie=true;
+	    clearInterval(moveBirdTimer);
+	    clearInterval(addLineTimer);
+        clearInterval(moveLineTimer);
+    }
+    //3.监听键盘事件
+    document.onkeydown=function(ev){
+    	if(isDie==true){
+           return false;
+    	}
+        // console.log(ev.keyCode);
+        if(ev.keyCode==38){
+        	iSpeed-=8;
+        }
+    }
+	//4.生成柱子
+	clearInterval(addLineTimer);        
+    function addLine(){
+    	//生成主子
+		var topLine=document.createElement("div");
+		var bottomLine=document.createElement("div");
+		//随机生成主子高度
+		 h=getRandom(200,300);
+		//将柱子的初始的left值存下来，一边接下来移动柱子使用
+		topLine.leftData=100;
+		//将柱子插入到容器中
+		oWrap.appendChild(topLine);
+		oWrap.appendChild(bottomLine);
+        //给柱子添加基本样式
+        topLine.className="topLine";
+        bottomLine.className="bottomLine";
+        //给柱子添加高度
+        topLine.style.height = h+"px";
+        bottomLine.style.height = oWrap.offsetHeight-topLine.offsetHeight-2-space+"px";
+    }
+    addLineTimer=setInterval(addLine,600);
+    //设置定时器移动柱子
+	moveLineTimer=setInterval(function(){
+	var aTopLine=document.querySelectorAll(".topLine");
+	var aBottomline=document.querySelectorAll(".bottomLine");
+	// console.log( aTopline);
+	for(var i=0;i<aTopLine.length;i++){
+		//碰撞检测
+		if(checkBump(oBird,aTopLine[i])||checkBump(oBird,aBottomline[i])){
+			//游戏结束
+			death();
+			alert("拜拜");
+		}
+
+		aBottomline[i].style.left=aTopLine[i].style.left=aTopLine[i].leftData-1+"%";
+		aTopLine[i].leftData=aTopLine[i].leftData-1;
+		// 如果柱子移出之后需要清楚掉
+		if(aTopLine[i].leftData<0){
+			oWrap.removeChild(aTopLine[i]);
+			oWrap.removeChild(aBottomline[i]);
+			}
+		}
+	},30)
+    
+</script>
+</html>

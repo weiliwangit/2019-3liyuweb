@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>属性选择器</title>
+	<style type="text/css">
+		/*[title |="kuazhu"]{
+			color: red; css2中写法
+		}*/
+		/*[title^="kuazhu"]{
+			color: red;*//*}*/
+			/*以什么开始写法*/
+		/*以什么结束写法*/
+
+		/*css3写法*/
+        /*[title~="com"]{
+        	color: red;
+        }css2种写法*/
+        [title*="com"]{
+        	color: red;
+        }/*css3中写法*/
+	</style>
+</head>
+<body>
+	<a href="#">我是a</a><br>
+	<a href="#" title="#">title="#"</a><br>
+	<a href="#" title="kuazhu">title="kuazhu"</a><br>
+	<a href="#" title="kuazhu.com">title="kuazhu.com"</a><br>
+	<a href="#" title="kuazhu-com">title="kuazhu-com"</a><br>
+	<a href="#" title="kuazhu&com">title="kuazhu&com"</a><br>
+	<a href="#" title="kuazhu com">title="kuazhu com"</a><br>
+	<a href="#" title="com">title="com"</a><br>
+	<a href="#" title="kuazhu com cn">title="kuazhu com cn"</a><br>
+	<p>我是p</p>
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>判断属性在实例上还是原型链上</title>
+</head>
+<body>
+	
+</body>
+<script type="text/javascript">
+	function Person(name,age){
+			this.name=name;
+			this.age=age;
+		}
+		Person.prototype.sayName=function(){
+			console.log('i am'+this.name);
+		}
+		Person.prototype.sayName=function(){
+			console.log('i am'+this.age);
+		}
+</script>
+</html>
