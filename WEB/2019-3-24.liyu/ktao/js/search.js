@@ -62,7 +62,7 @@ Search.prototype = {
 				clearTimeout(this.timer);
 				//设置延迟定时器防止频繁获取不需要的数据
 				this.timer = setTimeout(function(){
-					this.getData();	
+					this.getData();		
 				}.bind(this),this.options.delayGetData);
 			}.bind(this));
 		}else{
