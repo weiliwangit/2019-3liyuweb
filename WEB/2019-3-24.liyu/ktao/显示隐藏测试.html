@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="css/reset.css">
+	<style type="text/css">
+		.dropdown-item{
+			display: none;
+		}
+	</style>
+</head>
+<body>
+	<div>
+		<ul class="dropdown">
+			<li class="dropdown-layer">
+				<a href="#">我的淘宝</a>
+				<ul class="dropdown-item">
+					<li>我的收藏</li>
+					<li>我的收藏</li>
+				</ul>
+			</li>
+		</ul>
+	</div>
+</body>
+<script src="js/jquery-1.12.4.js"></script>
+	<script>
+		var slient={
+			init:function($elem){
+				if($elem.is(":hidden")){
+					$elem.data("status","hidden");
+				}else {
+					$elem.data("status","shown")
+				}
+			},
+			show:function($elem){
+				if($elem.data("status")=="show") return
+				if($elem.data("status")=="shown") return;
+				$elem.trigger("show").data("status","show");
+				$elem.show();
+				$elem.trigger("shown").data("status","shown");
+			},
+			hide:function($elem){
+				if($elem.data("status")=="hide") return;
+				if($elem.data("status")=="hidden") return;
+				$elem.trigger("hide").data("status","hide");
+				$elem.hide();
+				$elem.trigger("hidden").data("status","hidden");
+			}
+		}
+	</script>
+<script>
+	var $elem=$(".dropdown-item")
+	$elem.on("show shown hide hidden",function(ev){
+			console.log(ev.type)
+	})
+	slient.init($(".dropdown-item"));
+	$(".dropdown").on("click",function(ev){
+		slient.show($elem)
+		ev.stopPropagation();
+	});
+	$(document).on("click",function(){
+		slient.hide($elem)
+	})
+</script>
+</html>
