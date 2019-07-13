@@ -41,8 +41,10 @@
     	clearInterval(timer);
     	timer=setInterval(function(){
     		var aOpacity =getComputedStyle(oBox,false)["opacity"];
-    		aOpacity=aOpacity*100;
+    		// aOpacity=aOpacity*100;
     		// console.log(aOpacity);
+    		aOpacity=Math.round(aOpacity*100);
+    		console.log(aOpacity);
 	        if(aOpacity<100){
 	        	iSpeed=3;
 	        }else {
