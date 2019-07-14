@@ -18,14 +18,36 @@
 			height: 400px;
 			background-color: red;
 		}
+		.father{
+			height: 200px;
+			width: 200px;
+			background-color: red;
+			border: 1px solid black;
+		}
+		.son{
+			height: 100px;
+			width: 100px;
+			background-color: yellow;
+		}
 	</style>
 </head>
 <body>
 	<div class="big"></div>
 	<div class="sm" draggable="true"></div>
+	<div class="father">
+		<div class="son"></div>
+	</div>
 </body>
 <script src="./jquery-1.12.4.js"></script>
+
 <script>
+	$(".father").on('click',function(){
+		console.log(11)
+	})
+
+
+
+
 	$(function(){
 		$(".sm")
 		.on("dragstart",function(){

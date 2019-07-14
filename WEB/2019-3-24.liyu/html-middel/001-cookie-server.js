@@ -5,9 +5,9 @@ var url = require('url');
 
 var server = http.createServer(function(req,res){
 	
-	var oDate=new Date('2019-07-12 17:24:30').toUTCString();
+	// var oDate=new Date('2019-07-12 17:24:30').toUTCString();
 	// res.setHeader("set-Cookie",['username=tom;Expires='+oDate]);
-	res.setHeader("set-Cookie",['username=tom;Max-Age=10']);
+	// res.setHeader("set-Cookie",['username=tom;Max-Age=10']);
 	// console.log(res.header.cookie);
 	if(req.url == "/favicon.ico"){
 		res.end("favicon.ico");

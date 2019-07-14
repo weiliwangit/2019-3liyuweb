@@ -5,6 +5,42 @@
 	<title>002-set-Cookie.html</title>
 </head>
 <body>
-	
+	猪猪
 </body>
+<script type="text/javascript">
+	function steCookie(key ,val,iDate){
+	    var oDate = new Date();
+	    oDate.setDate(oDate.getDate() + iDate);
+	    document.cookie =key+"="+val+";Expires="+oDate;
+	}
+	steCookie("usename","leo",10);
+	steCookie("age","20",10);
+	// console.log(document.cookie)
+	// var oDate=new Date("2019-07-13 20:55:00").toUTCString();
+	// document.cookie="username=tom;Expires="+oDate;
+	// document.cookie="age=18";
+	// console.log(document.cookie)
+	function getCookie(key){
+		var str=document.cookie;
+		// console.log(str)
+		var arr1=str.split(';');
+		// console.log(arr1);
+		for(var i=0;i<arr1.length;i++){
+			// console.log(arr1[i]);
+			var arr2=arr1[i].split("=");
+			// console.log(arr2);
+			for(var j=0;j<arr2.length;j++){
+				if(key.trim()==arr2[0].trim()){
+					return arr2[1];
+					break;
+				}
+			}
+		}
+	}
+	console.log(getCookie("age"));
+	function removeCookie(key){
+		steCookie(key,false,-1);
+	}
+	removeCookie("age")
+</script>
 </html>
