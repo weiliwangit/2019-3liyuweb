@@ -11,6 +11,7 @@
 		.sm{
 			width: 100px;
 			height: 100px;
+			margin-top: 20px;
 			background-color:blue;
 		}
 		.big{
@@ -29,16 +30,44 @@
 	$(function(){
 		$(".sm")
 		.on("dragstart",function(){
-			console.log("dragstart")
+			// 移动物体开始移动时触发
+			// console.log("dragstart")
+		})
+		.on("drag",function(){
+			// 被拖动元素拖动时触发
+			// console.log("drag")
+		})
+		.on("dragend",function(){
+			// dragend 拖拽时松开鼠标时触发
+			// console.log("dragend")
 		})
 		$(".big")
 		.on('dragover',function(ev){
-			console.log("dragover")
+			// 移动的元素进入大盒子里时触发，只要鼠标一直按下去，就一直会触发，默认是不允许放进去，只需阻止默认行为即可
+			// console.log("dragover")
+			// 阻止默认行为
 			ev.preventDefault();
 		})
 		.on('drop',function(){
-			console.log("drop")
+			//当移动物体被放下时触发，松开鼠标时不触发，只是放下时触发
+			// console.log("drop")
 			$(this).append($('.sm'))
+		})
+		.on("dragenter",function(){
+			// 当被拖动元素进入容器时触发
+			// console.log("dragenter")
+		})
+		.on("dragleave",function(){
+			// 被拖动元素离开容器时触发
+			// console.log("dragleave")
+		})
+		.on("dragend ",function(){
+			// 被拖动元素在容器中松开鼠标时触发
+			// console.log("dragend")
+		})
+		.on("drag ",function(){
+			// 容器中的被拖动元素拖动时触发,也就是放进大盒子后再次移出来时触发
+			console.log("drag")
 		})
 
 	})

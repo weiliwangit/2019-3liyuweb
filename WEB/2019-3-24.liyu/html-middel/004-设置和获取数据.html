@@ -27,6 +27,8 @@
 		.son{
 			height: 100px;
 			width: 100px;
+			margin-left: 20px;
+			margin-top: 20px;
 			background-color: yellow;
 		}
 	</style>
@@ -44,25 +46,30 @@
 	$(".father").on('click',function(){
 		console.log(11)
 	})
-
-
-
-
 	$(function(){
 		$(".sm")
-		.on("dragstart",function(){
-			console.log("dragstart")
+		.on("dragstart",function(ev){
+			// console.log("dragstart")
+			// 拿到class
+			// console.log($(this).attr('class'))
+			// console.log(ev.target.class);为什么拿class拿不到，拿到的是触发事件的元素
+			// console.log(ev.currentTarget.class)绑定在谁身上就会拿到谁，为什么拿class拿不到
+			var targetId=$(this).attr('class');
+			ev.originalEvent.dataTransfer.setData('targetId',targetId)
 		})
 		$(".big")
 		.on('dragover',function(ev){
-			console.log("dragover")
+			// console.log("dragover")
 			ev.preventDefault();
 		})
-		.on('drop',function(){
-			console.log("drop")
+		.on('drop',function(ev){
+			// console.log("drop")
+			var targetId = ev.originalEvent.dataTransfer.getData('targetId')
+			console.log(targetId)
 			$(this).append($('.sm'))
 		})
 
 	})
 </script>
+<script type="text/javascript" src="jquery-1.12.4.js"></script>
 </html>
