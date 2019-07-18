@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>模板字符.html</title>
+</head>
+<body>
+	<button>点我</button>
+</body>
+<script type="text/javascript">
+	var aBtn=document.querySelector("button");
+	var date=["tom","leo","kangkang"];
+	aBtn.onclick=function(){
+		var html="";
+			html+="<ul>";
+				for(var i=0;i<date.length;i++ ){
+					// console.log(date[i])
+					// html+="<li>"+date[i]+"</li>";
+					// 模板字符
+					 // html+=<li>"${javascript+date[i]}"</li>`
+				}
+			html+="</ul>";
+			document.body.innerHTML=html;
+	}
+</script>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>数组</title>
+</head>
+<body>
+	
+</body>
+<script type="text/javascript">
+	/*
+	let aa=5,
+		bb=6,
+		cc=7
+	console.log(aa,bb,cc)
+	这也是数组的写法
+	*/
+
+
+	/*
+	let [a,b,c,d]=[1,2,3,4]
+	//数组abcd位置与值的位置相照应
+	console.log(a,b,c,d)
+	*/
+
+
+	// let [a,[b,c],d]=[1,[2,undefined ],4]
+	//数组中可以嵌套数组
+	// 不写c的值会打印出undefined,c的值是undefined，也会打印undefined
+
+
+	// let [a,[b,c=undefined],d]=[1,[2],4]
+	//如果默认值是undefined，则c的值也是undefined；
+
+
+
+	// let [a,[b,c=null],d]=[1,[2],4]
+	//如果默认值是null，则c的值也是null；
+
+	let [a,[b,c],d]=[1,[2,null],4]
+	// 不写c的值会打印出null
+	console.log(a,b,c,d)
+</script>
+</html>

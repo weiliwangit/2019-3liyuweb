@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>屏幕尺寸适配</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+	<style type="text/css">
+		.box{
+			float: left;
+			width: 15rem;
+			height: 15rem;	
+			background-color: red;
+		}
+		p{
+			font-size: 4rem;
+		}
+	</style>
+</head>
+<body>
+	<!-- 像素px一般不用；%可以实现布局的适配,但是字体不容易适配；em（1em=16px）来适配的话容易造成混乱；vw/vh可以适配布局和文字,但兼容性不好；rem（1rem=16px） 根元素字体的大小,默认值是16px,最小设置为12px-->
+	<div>
+		<div class="box"></div>
+		<p>你好</p>
+	</div>
+</body>
+</html>

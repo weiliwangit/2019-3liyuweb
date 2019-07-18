@@ -1,3 +1,25 @@
-body {
+/*
+多行注释，编译时被保留
+*/
+/*直接使用*/
+.box {
+  width: 100px;
+  height: 100px;
   background-color: #ff0000;
+  border: 1px solid block;
+}
+.box1 {
+  width: 100px;
+  height: 100px;
+  background-color: #ff0000;
+  border: 1px solid block;
+  margin-top: 80px;
+  font-size: 20px;
+}
+.box2 {
+  height: 0;
+  overflow: hidden;
+  border-style: solid;
+  border-width: 20px;
+  border-color: transparent transparent transparent red;
 }

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>let和var以及const</title>
+</head>
+<body>
+	<button>1</button>
+	<button>2</button>
+	<button>3</button>
+	<button>4</button>
+</body>
+<script type="text/javascript">
+	// let定义过的变量不能再定义,var定义过的变量可以重新定义
+	// let定义的变量不会声明提升,var定义的变量会发生声明提升 
+	// let定义的变量在let命令所在的代码块内有效,var定义的变量在函数范围内有效for循环用let后，
+	// i变成块级域,也就是花括号中的块，每进入一次花括号就生成了一个块级域
+	// var是个函数级，在script标签中相当于隐藏了一个函数，var写在函数里面，所以script里面的var有人就变成了全局变量
+	var oBtn=document.getElementsByTagName("button");
+	/*
+	for(var i=0;i<oBtn.length;i++){
+		//在这里呢，i相当于一个全局变量
+		// 所以i值在循环后是4，
+		oBtn[i].index=i;
+		oBtn[i].onclick=function(){
+			console.log(this.index)
+			// 在这里拿的也是全局变量
+		}
+	}
+	*/
+	/*
+	for(var i=0;i<oBtn.length;i++){
+		//写个闭包就是让i变成局部变量，从而不受全局变量的影响
+		;(function(i){
+			oBtn[i].onclick=function(){
+				console.log(i)
+			}
+		})(i);
+	}
+	*/
+	// 块级作用域：写在{}中的就是块级
+	for(let i=0;i<oBtn.length;i++){
+		// let写在for循环中，i值会变成块级作用域
+		oBtn[i].onclick=function(){
+				console.log(i)
+			}
+	}
+	// let aa
+	// console.log(aa)//undefined;
+	// aa=5;
+	// let aa=5;
+	// let aa=6;//不能重新定义（这叫重新定一）
+	// aa=6（这叫重新赋值
+	// console.log(aa);//注意let可以先不赋值
+	const AA=5;
+	console.log(AA);
+	// const AA=5;不能重新定义,重新赋值
+	console.log(AA);
+</script>
+</html>

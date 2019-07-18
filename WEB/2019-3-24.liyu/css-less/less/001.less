@@ -1,4 +1,35 @@
+
+//单行注释，编译时不被保留
+/*
+多行注释，编译时被保留
+*/
+@w:100px;
+@h:100px;
 @c:red;
-body{
+@t:80px;
+/*直接使用*/
+.box{
+	width: @w;
+	height: @h;
 	background-color: @c;
+	border: 1px solid block;
 }
+
+.box1{
+	.box;
+	margin-top: @t;
+	font-size: 20px;
+}
+.box2{
+	height: 0;
+	height: 0;
+	overflow: hidden;
+	border-style: solid;
+	border-width: 20px;
+	border-color: transparent transparent transparent red;
+}
+
+
+
+
+
