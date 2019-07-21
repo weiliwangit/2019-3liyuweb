@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>ajax</title>
+</head>
+<body>
+	<button>请求数据</button>
+</body>
+<script type="text/javascript" src="jquery-1.12.4.js"></script>
+<script>
+	$(function(){
+		$("button").on('click',function(){
+			$.ajax({
+				url:"https://api.github.com/users/kuazhu",
+				type:"GET",
+				// date:{},
+				dataType:'text',
+				success:function(data,statusMsg,jqXHR){
+					console.log("data",data)
+					console.log("statusMsg",statusMsg)
+					console.log("jqXHR",jqXHR)
+				},
+				error:function(jqXHR,statusMsg){
+					console.log("jqXHR",jqXHR)
+					console.log("statusMsg",statusMsg)
+				},
+				complete:function(jqXHR,statusMsg){
+					console.log("jqXHR",jqXHR)
+					console.log("statusMsg",statusMsg)
+				},
+				timeout:1000,
+
+			})
+		})
+		
+	})
+</script>
+</html>

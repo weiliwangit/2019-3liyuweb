@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>013-用promise处理dom事件.html</title>
+</head>
+<body>
+	
+</body>
+<script type="text/javascript">
+	// 用promise处理dom事件为了是解决异步程序一系列问题，用promise以后呢，加载完dom事件时就像加载同步一样，dom事件出问题了不需要像异步加载一样在那等异步加载完毕，而是像同步一样，dom事件出问题了可以直接停到出问题的地方
+	const getImagePromise=(src)=>new Promise((resolve,reject)=>{
+		const img=new Image();
+		img.onload=()=>{
+			resolve(src+ " 加载成功")
+		}
+		img.onerror=()=>{
+			reject(src+ " 加载失败")
+		}
+		img.src=src;
+
+	})
+		getImagePromise("./img/001.jpg")
+		.then(date=>{
+			console.log(date)
+		})
+		.catch(data=>{
+			console.log(data)
+		})
+</script>
+</html>

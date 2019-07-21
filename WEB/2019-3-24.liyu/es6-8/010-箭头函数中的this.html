@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+</body>
+<script type="text/javascript">
+	
+	function Timer(id){
+        this.id = id;       
+        // setTimeout(function(){
+        //     console.log(this,this.id);//window 99
+        // },100)  
+        console.log(this)
+    }
+    // var id = 99;
+    let t = new Timer();
+    
+    /*
+    function Timer(id){
+        this.id = id;    
+        setTimeout(()=>{
+            console.log(this,this.id);//Timer聽{id: 100} 100
+        },100); 
+    }   
+    var id = 99;
+    let t = new Timer(100);
+    */
+</script>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>对象的浅复制</title>
+</head>
+<body>
+	
+</body>
+<script type="text/javascript" src="jquery-1.12.4.js"></script>
+<script type="text/javascript">
+	//1利用json进行深复制
+	/*
+	var obj={
+		name:"tom",
+		age:18,
+		friend:{
+			name:"dog",
+		}
+	};
+	let obj1=JSON.parse(JSON.stringify(obj));
+	obj1.friend.name="pig";
+	*/
+	//利用jq进行深复制
+	var obj={
+		name:"tom",
+		age:18,
+		friend:{
+			name:"dog",
+		}
+	};
+	obj1=$.extend(true,{},obj);//true表示深复制，false代表浅复制
+	obj1.friend.name="pig";
+	console.log(obj)
+	console.log(obj1)
+
+</script>
+</html>
