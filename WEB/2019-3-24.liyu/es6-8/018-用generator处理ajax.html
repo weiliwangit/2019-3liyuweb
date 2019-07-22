@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>018-用generator处理ajax.html</title>
+</head>
+<body>
+	
+</body>
+<script type="text/javascript" src="jquery-1.12.4.js"></script>
+<script>
+	const getDataPromise=(url)=>new Promise((resolve,reject)=>{
+			$.ajax({
+				url:url,
+				success:data=>{
+					resolve(data)
+				},
+				error:(jqXHR,statusMsg)=>{
+					reject(statusMsg)
+				}
+			})
+	});
+	function*gen(url){
+		const data1= yield getDataPromise(url);
+		const data2=yield  getDataPromise()
+	}
+	const g=gen("https://api.github.com/users/kuazhu");
+	g.next()
+</script>
+</html>

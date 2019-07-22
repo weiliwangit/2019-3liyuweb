@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>022-原型对象及继承.html</title>
+</head>
+<body>
+	
+</body>
+<script type="text/javascript">
+	function Person(name,age){
+		this.name=name;
+		this.age=age;//属性
+	}
+	// Person("name",18)
+	// Person叫构造函数或类
+	Person.prototype.sayName=function(){
+		console.log("i am "+ this.name)
+	}//动态方法
+	Person.prototype.sayAge=function(){
+		console.log("i am "+ this.age)
+	}
+	Person.sayHi=function(){
+		console.log("hi")
+	}
+	var p1=new Person("leo",18)
+	// p1叫实例
+	// new Person("leo",18)这叫实例化
+	// p1.sayAge()
+	// p1.sayName()
+	// Person.sayHi()
+
+
+	function Student(name,age,major){
+		Person.call(this,name,age)//属性继承
+		// 在这里this指的是p2,然后改变了person函数中的this
+	}
+	// Student.prototype=object.create()创建一个新的对象
+	Student.prototype=Object.create(Person.prototype)
+	//让着这个新的对象指向Person.prototype，然后让Student.prototype在指向创建的新对象
+	//动态方法继承
+	Student.prototype.sayMajor=function(){
+		console.log(11)
+	}
+	//这一步必须放在Student.prototype=Object.create(Person.prototype)这一步之后
+	Student.prototype.constructor=Student
+
+	Student.sayHi=Person.sayHi
+
+	p2=new Student("tom",19)
+	p2.sayName()
+	p2.sayAge()
+	console.log(p2)
+</script>
+</html>

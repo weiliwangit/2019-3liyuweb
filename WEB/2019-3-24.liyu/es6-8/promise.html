@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>promise</title>
+</head>
+<body>
+	
+</body>
+<script type="text/javascript">
+	const promise=new Promise((resolve,reject)=>{
+				setTimeout(()=>{
+					resolve("模拟加载成功")
+				},4)
+				return  p1="在这里作为变量值，可以在then方法里拿到，不能作为then方法成功时data值"
+		})
+		// console.log(promise)
+		promise
+		.then(data=>{
+			console.log(p1)//在then方法里可以p1，不过p1不等于data
+			console.log(data)
+			return "return出去后作为下一个then方法成功时的date值"
+		})
+		.then(data=>{
+			console.log(data)
+		})
+</script>
+</html>

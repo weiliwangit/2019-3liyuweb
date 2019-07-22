@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>021-async-ajax.html</title>
+</head>
+<body>
+	
+</body>
+<script type="text/javascript" src="jquery-1.12.4.js"></script>
+<script>
+	const getDataPromise = (url,type='get',data='')=>new Promise((resolve,reject)=>{
+        //处理异步请求(ajax)
+        $.ajax({
+            url:url,
+            type:type,
+            data:data,
+            success:(data)=>{
+                resolve(data)
+            },
+            error:(jqXhr,statusMsg)=>{
+                reject(statusMsg)
+            }
+        })
+    })
+	async function getGithubData(url){
+		// console.log(11)
+		const data1= await getDataPromise(url)
+		const data2= await getDataPromise(data1.followers_url)
+		const data3= await getDataPromise(data2[0].followers_url)
+		return data3
+		// console.log(data3)
+	}
+	getGithubData('https://api.github.com/users/kuazhu')
+	.then(data=>{
+		console.log(data3)
+	})
+</script>
+</html>

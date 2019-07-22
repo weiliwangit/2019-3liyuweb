@@ -24,8 +24,9 @@
 
 	//不管怎样，then总是接受的是resolve和rejiect的值
 
-	// promise.then.then的data是undefined，如果想有值，则需添加return，如果return出去的是个数据，则data是一个数据，如果return出去的是个promise对象，则data是return出去的promise对象成功是的值。
-	
+	// promise.then.then的data是undefined，如果想有值，则需添加return，如果return出去的是个数据，则data是这个数据，如果return出去的是个promise对象，则data是return出去的promise对象成功是的值。
+	//then方法会返回一个promise对象，这个对象不等于上面的那个promise
+	// then方法里return出去的promise对象和then方法返回的promise对象不相等
 	let p4
 	let p3=promise
 	.then(data=>{

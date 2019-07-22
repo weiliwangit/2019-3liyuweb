@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>023-class原型对象.html</title>
+</head>
+<body>
+	
+</body>
+<script type="text/javascript">
+	class Person{
+		constructor(name,age){
+			this.name=name
+			this.age=age
+		}
+		sayName(){
+			console.log("i am "+this.name)
+		}
+		sayAge(){
+			console.log("i am "+this.age)
+		}
+		static sayHi(){
+			console.log("hi")
+		}
+
+	}
+	const person=new Person("tom",18)
+	// person.sayAge();
+	// person.sayName();
+	// Person.sayHi()
+	
+</script>
+</html>

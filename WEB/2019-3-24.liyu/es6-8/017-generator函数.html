@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>generator</title>
+</head>
+<body>
+	
+</body>
+<script type="text/javascript">
+	function*genertor(){
+		console.log("aa")
+		yield 11
+	}
+	const g=genertor()
+	g.next()
+	// genertor()
+	// generator()//返回一个遍历器对象，没办法执行函数内部的程序
+	//只有调用遍历器对象上的next方法才可以执行函数内部代码
+	console.log(g.next())
+	
+		
+</script>
+</html>
