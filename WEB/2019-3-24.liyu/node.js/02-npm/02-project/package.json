@@ -9,6 +9,8 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "dependencies": {},
+  "dependencies": {
+    "jquery": "^3.4.1"
+  },
   "devDependencies": {}
 }
