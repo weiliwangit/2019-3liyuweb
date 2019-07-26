@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>async补充</title>
+</head>
+<body>
+	
+</body>
+<script type="text/javascript" src="jquery-1.12.4.js"></script>
+<script>
+	/*
+	async function fn(){
+
+	}
+	console.log(fn())//fn会返回一个成功时promise对象，对象返回成功时的数据是undefined（因为什么也没传）
+	fn()
+	.then(data=>{
+		console.log(data)
+	})
+	*/
+	/*
+	async function fn(){
+		return "data"
+		
+	}
+	console.log(fn())//如果给async加return，那么fn会返回一个成功时promise对象，对象返回成功时的数据是data（注意和promise对象做对比，promise对象return出去的值可以在then方法上拿到不可以直接从promise上拿，只是可以拿到不能作为成功时的数据，并且不是在then方法里的return，而是在promise对象函数内部第一次return）
+	fn()
+	.then(data=>{
+		console.log(data)//这时成功时的数据也是return后面的数据
+	})
+	*/
+	let p1
+	async function fn(){
+		p1=new Promise((resolve,reject)=>{
+			resolve("ok")
+		})
+		return p1
+		
+	}
+	let p2=fn()
+	//p1不等于p2，p1成功状态，且有成功时数据；
+	// p2返回一个处于进行中的promise对象
+
+	p2
+	.then(data=>{
+		console.log(data)
+	})
+</script>
+</html>

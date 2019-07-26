@@ -8,20 +8,20 @@
 	
 </body>
 <script type="text/javascript">
-	// const getTimerPromise=(dalay)=>new Promise((resolve,reject)=>{
-	// 			setTimeout(()=>{
-	// 				resolve("timer "+dalay+" success")
-	// 			}, dalay)
-	// })
-	// const promises=[100,200,400].map(dalay=>getTimerPromise(dalay));
-	// const p=Promise.race(promises)
-	// p
-	// .then(data=>{
-	// 	console.log(data)
-	// })
-	var arr =[1,2,3].map(function(){
-		console.log(11)
+	const getTimerPromise=(dalay)=>new Promise((resolve,reject)=>{
+				setTimeout(()=>{
+					resolve("timer "+dalay+" success")
+				}, dalay)
 	})
-	console.log(arr)
+	const promises=[100,200,400].map(dalay=>getTimerPromise(dalay));
+	const p=Promise.race(promises)
+	p
+	.then(data=>{
+		console.log(data)
+	})
+	// var arr =[1,2,3].map(function(value,index){
+	// 	console.log(11)
+	// })
+	// console.log(arr)
 </script>
 </html>

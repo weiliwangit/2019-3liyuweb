@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+</head>
+<body>
+	
+</body>
+<script type="text/javascript">
+	/*
+	async function fn(){
+		const data1= await "data1"
+		console.log(data1)
+	}
+	fn()
+	*/
+	const promise=new Promise((resolve,reject)=>{
+			setTimeout(()=>{
+				reject("reject data")
+			},1000)
+				
+	})
+	async function fn(){
+		try{
+			const data1= await promise
+			console.log("get data1",data1)
+		}catch(err){
+			console.log(err)
+		}
+		
+		//await后面是一个Promise对象，则await返回一个promise对象的介过，如果不是Promise对象，就直接返回对应的值
+		// console.log(data1)
+		// await只能在async函数中
+		return "result data"
+	}
+	fn()
+	.then(data=>{
+		console.log(data)
+	})
+	
+</script>
+</html>

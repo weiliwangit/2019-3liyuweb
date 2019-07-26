@@ -22,9 +22,20 @@
 	});
 	function*gen(url){
 		const data1= yield getDataPromise(url);
-		const data2=yield  getDataPromise()
+		const data2= yield getDataPromise(data1);
+		const data3= yield getDataPromise(data2);
+		console.log("data3",data3)
 	}
 	const g=gen("https://api.github.com/users/kuazhu");
-	g.next()
+	g.next().value
+	.then(data=>{
+		return g.next(data.followers_url).value
+	}) 
+	.then(data=>{
+		return g.next(data[0].followers_url).value
+	})
+	.then(data=>{
+		g.next(data)
+	})
 </script>
 </html>

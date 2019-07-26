@@ -20,11 +20,15 @@
 
 	})
 	const promise=["./img/001.jpg","./img/001.jpg","./img/001.jpg","./img/001.jpg"].map(src=>getImagePromise(src))
-	// console.log(promise)
+	console.log(promise)
 	const p=Promise.all(promise)
 	p
 	.then(data=>{
 		console.log(data)
 	})
+	// var arr=["10","10","10"].map(function(value,index){
+	// 	return "promise"
+	// })
+	// console.log(arr)
 </script>
 </html>

@@ -37,8 +37,16 @@
 	// let [a,[b,c=null],d]=[1,[2],4]
 	//如果默认值是null，则c的值也是null；
 
-	let [a,[b,c],d]=[1,[2,null],4]
+	// let [a,[b,c],d]=[1,[2,null],4]
 	// 不写c的值会打印出null
-	console.log(a,b,c,d)
+	// console.log(a,b,c,d)
+	let arr1=[1,3,5,7,4]
+	//let arr2=arr1.concat([])//arr2=arr1.concat(数组3)将arr1和arr3合并生成arr2，arr1不变，属于深拷贝
+	//console.log(arr2)
+	//let arr2=arr1.slice(0)//arr2=arr1.concat(骑士下标，结束下标)，arr1不变，属于深拷贝
+	//console.log(arr2)
+	// let arr2=arr1.indexOf(查找的数，骑士下标)
+	let arr2=arr1.join("")//用指定的字符把数组的每一项连接成字符串并返回,原数组不变
+	console.log(arr2)
 </script>
 </html>

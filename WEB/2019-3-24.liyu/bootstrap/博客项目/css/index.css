@@ -1,0 +1,8 @@
+#carousel-example-generic{
+	margin-top: 51px;
+	width:400px;
+}
+#carousel-example-generic .carousel-inner .active img{
+	width: 100%;
+}
+

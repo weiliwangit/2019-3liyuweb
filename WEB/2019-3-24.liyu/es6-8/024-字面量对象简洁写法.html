@@ -7,4 +7,15 @@
 <body>
 	
 </body>
+<script type="text/javascript">
+	var obj={
+		name:"tom",
+		age:"18"
+	}
+	console.log(Object.keys(obj))//拿到的是数组“name”和age
+	console.log(Object.entries(obj))//拿到的是数组套数组name:"tom",age:"18"
+	console.log(Object.values(obj))//拿到的是数组tom和18
+	console.log(Object.assign(obj))//拿到的是对象name:"tom",age:"18"
+	console.log(Object.getOwnPropertyDescriptors(obj))//拿到的是对象,对象里是对name，age的详细描述
+</script>
 </html>
