@@ -8,15 +8,17 @@
 	
 </body>
 <script type="text/javascript">
-	function*genertor(){
+	function*genertor(a){
 		console.log("aa")
-		yield 11
+		let b= yield a+5
+		console.log(b)
+		let c= yield b+10
 	}
-	const g=genertor()
+	const g=genertor(2)
 	// generator()//返回一个遍历器对象，没办法执行函数内部的程序
 	//只有调用遍历器对象上的next方法才可以执行函数内部代码
 	console.log(g.next())//返回一个对象，对象的值是yield后面的代码，可以传参数，但是第一传参不起作用，从第二个next开始穿的参数作为上一次yield后面的值
-	
+	console.log(g.next())
 	
 		
 </script>

@@ -8,19 +8,22 @@
 	<button>点我</button>
 </body>
 <script type="text/javascript">
-	var aBtn=document.querySelector("button");
-	var date=["tom","leo","kangkang"];
-	aBtn.onclick=function(){
-		var html="";
-			html+="<ul>";
-				for(var i=0;i<date.length;i++ ){
-					// console.log(date[i])
-					// html+="<li>"+date[i]+"</li>";
-					// 模板字符
-					 html+=`<li>${date[i]}</li>`
-				}
-			html+="</ul>";
-			document.body.innerHTML=html;
-	}
+	// var aBtn=document.querySelector("button");
+	// var date=["tom","leo","kangkang"];
+	// aBtn.onclick=function(){
+	// 	var html="";
+	// 		html+="<ul>";
+	// 			for(var i=0;i<date.length;i++ ){
+	// 				// console.log(date[i])
+	// 				// html+="<li>"+date[i]+"</li>";
+	// 				// 模板字符
+	// 				 html+=`<li>${date[i]}</li>`
+	// 			}
+	// 		html+="</ul>";
+	// 		document.body.innerHTML=html;
+	// }
+	var str='hello'
+	var str1=str.padStart(15,"word")//是以“hello”为基础，以word为补全字母进行补全
+	console.log(str1)
 </script>
 </html>

@@ -8,14 +8,14 @@ const server=http.createServer((req,res)=>{
 server.listen(3000,"127.0.0.1",()=>{
 	console.log("server is running http://127.0.0.1:3000")
 })
-*//*
+*/
+
 const http=require("http")
 const path=require("path")
 const fs=require('fs')
-const 
 //每一次请求都会执行createServer方法中的函数
 const server=http.createServer((req,res)=>{
-	//console.log(req.url)//记录请求地址
+	console.log(req.url)//记录请求地址
 
 	const filePath=path.normalize(__dirname+"/"+req.url)
 	// console.log(filePath)
@@ -37,13 +37,13 @@ const server=http.createServer((req,res)=>{
 server.listen(3000,"127.0.0.1",()=>{
 	console.log("server is running http://127.0.0.1:3000")
 })
-*/
 
 
 
 
 
 
+/*
 const http = require('http')
 const fs = require('fs')
 const path = require('path')
@@ -77,3 +77,4 @@ const server = http.createServer((req,res)=>{
 server.listen(3000,'127.0.0.1',()=>{
     console.log('server is running on http://127.0.0.1:3000')
 })
+*/

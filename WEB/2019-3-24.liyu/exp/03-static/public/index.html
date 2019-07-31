@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>test</title>
+</head>
+<body>
+	<h1>你好</h1>
+	<button id="get">get</button>
+	<button id="post">post</button>
+	<button id="put">put</button>
+	<button id="delete">delete</button>
+</body>
+<script type="text/javascript" src="js/jquery-1.12.4.js"></script>
+<script>
+	$(function(){
+		$("#get").on("click",function(){
+			$.ajax({
+				url:"/get",
+				type:"GET",
+				success:function(){
+					console.log()
+				}
+			})
+		});
+		$("#post").on("click",function(){
+			$.ajax({
+				url:"/post",
+				type:"POST",
+				success:function(){
+					console.log()
+				}
+			})
+		});
+		$("#put").on("click",function(){
+			$.ajax({
+				url:"/put",
+				type:"put",
+				success:function(){
+					console.log()
+				}
+			})
+		});
+		$("#delete").on("click",function(){
+			$.ajax({
+				url:"/delete",
+				type:"delete",
+				success:function(){
+					console.log()
+				}
+			})
+		});
+
+		
+	})
+</script>
+</html>
