@@ -14,6 +14,10 @@
 		console.log(b)
 		let c= yield b+10
 	}
+	//该函数返回一个遍历器也就是genertor
+	// 如果该函数内一个yield都不写直接调用遍历器上的next方法会返回一个对象，这个对象的值是undefined，状态是true
+	// 不管第几次调用next方法，遇见return就代表程序执行完毕，会返回一个对象，对象的值是return后面的值，状态是true
+	next
 	const g=genertor(2)
 	// generator()//返回一个遍历器对象，没办法执行函数内部的程序
 	//只有调用遍历器对象上的next方法才可以执行函数内部代码

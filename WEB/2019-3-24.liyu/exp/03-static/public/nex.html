@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>next</title>
+</head>
+<body>
+	<h1>你好</h1>
+	<button id="get">get</button>
+</body>
+<script type="text/javascript" src="js/jquery-1.12.4.js"></script>
+<script>
+	$(function(){
+		$("#get").on("click",function(){
+			$.ajax({
+				url:"/get",
+				type:"GET",
+				success:function(){
+					console.log()
+				}
+			})
+		});
+	})
+</script>
+</html>
