@@ -1,0 +1,38 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+
+.App{
+	width: 800px;
+	height: 800px;
+	margin:50px auto;
+}
+.App input{
+	width: 600px;
+	height: 50px;
+	font-size: 16px;
+	padding-bottom: 5px;
+	padding-top: 5px;
+	padding-left: 10px;
+	outline: none;
+	box-sizing: border-box;
+}
+.App .btn{
+	width: 50px;
+	height: 51px;
+	vertical-align: middle;
+	box-sizing: border-box;
+}
+.App ul{
+	list-style: none;
+}
+.App ul li{
+	width: 650px;
+	height: 50px;
+	margin-top:20px;
+	padding-left: 10px;
+	border-left: 2px solid yellow;
+	border-bottom:1px solid red; 
+	
+}
