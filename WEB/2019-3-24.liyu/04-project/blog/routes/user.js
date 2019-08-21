@@ -1,4 +1,9 @@
-
+/*
+* @Author: TomChen
+* @Date:   2019-08-01 15:30:57
+* @Last Modified by:   TomChen
+* @Last Modified time: 2019-08-04 16:49:28
+*/
 const express = require('express')
 const UserModel = require('../models/user.js')
 const hmac = require('../util/hmac.js')

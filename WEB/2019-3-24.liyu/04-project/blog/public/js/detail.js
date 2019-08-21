@@ -1,3 +1,9 @@
+/*
+* @Author: TomChen
+* @Date:   2019-03-13 18:10:45
+* @Last Modified by:   TomChen
+* @Last Modified time: 2019-08-08 10:29:24
+*/
 ;(function($){
     $('.btn-sub-comment').on('click',function(){
         var val = $('#comment-content').val()

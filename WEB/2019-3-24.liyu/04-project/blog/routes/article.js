@@ -1,4 +1,9 @@
-
+/*
+* @Author: TomChen
+* @Date:   2019-08-01 15:30:57
+* @Last Modified by:   TomChen
+* @Last Modified time: 2019-08-08 11:22:47
+*/
 const express = require('express')
 
 const multer  = require('multer')
@@ -72,12 +77,14 @@ router.post('/add', (req, res) => {
     })
     .then(articles=>{
         res.render("admin/success",{
+            userInfo:req.userInfo,
             message:"新增文章成功",
             url:'/article'
         })
     })
     .catch(err=>{
         res.render("admin/err",{
+            userInfo:req.userInfo,
             message:"数据库操作失败",
             url:'/article'
         })
@@ -110,6 +117,7 @@ router.get('/edit/:id', (req, res) => {
         })
         .catch(err=>{
             res.render("admin/err",{
+                userInfo:req.userInfo,
                 message:"数据库操作失败",
                 url:'/article'
             })
@@ -117,6 +125,7 @@ router.get('/edit/:id', (req, res) => {
     })
     .catch(err=>{
         res.render("admin/err",{
+            userInfo:req.userInfo,
             message:"数据库操作失败",
             url:'/article'
         })
@@ -128,12 +137,14 @@ router.post("/edit",(req,res)=>{
     ArticleModel.updateOne({_id:id},{title,category,intro,content})
     .then(result=>{
         res.render("admin/success",{
+            userInfo:req.userInfo,
             message:"编辑文章成功",
             url:'/article'
         })                        
     })
     .catch(err=>{
         res.render("admin/err",{
+            userInfo:req.userInfo,
             message:"数据库操作失败",
         })
     })        
@@ -145,12 +156,14 @@ router.get('/delete/:id', (req, res) => {
     ArticleModel.deleteOne({_id:id})
     .then(result=>{
         res.render("admin/success",{
+            userInfo:req.userInfo,
             message:"删除文章成功",
             url:'/article'
         })
     })
     .catch(err=>{
         res.render("admin/err",{
+            userInfo:req.userInfo,
             message:"数据库操作失败",
             url:'/article'
         })

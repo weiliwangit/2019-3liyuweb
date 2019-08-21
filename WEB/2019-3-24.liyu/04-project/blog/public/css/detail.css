@@ -1,4 +1,9 @@
-
+/*
+* @Author: TomChen
+* @Date:   2019-03-13 20:33:29
+* @Last Modified by:   TomChen
+* @Last Modified time: 2019-08-08 10:30:57
+*/
 .detail-panel{
 	min-height: 600px;
 }
@@ -18,3 +23,9 @@
 #comment-wrap .panel-body{
     word-break: break-all;
 }
+#comment-wrap{
+    min-height: 400px;
+}
+
+
+

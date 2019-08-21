@@ -1,3 +1,9 @@
+/*
+* @Author: TomChen
+* @Date:   2019-08-01 15:30:57
+* @Last Modified by:   TomChen
+* @Last Modified time: 2019-08-08 09:15:56
+*/
 const express = require('express')
 const CategoryModel = require('../models/category.js')
 const ArticleModel = require('../models/article.js')
@@ -43,7 +49,6 @@ router.get('/', (req, res) => {
 //处理文章分页数据的ajax请求
 router.get('/articles', (req, res) => {
     const id = req.query.id
-    console.log(id)
     const query = {}
     if(id){
         query.category = id
@@ -92,6 +97,7 @@ router.get('/list/:id', (req, res) => {
 async function getDetailData(req){
     
     const id = req.params.id
+
     const commonDataPromise = getCommonData()
     const articlePromise = ArticleModel.findOneAndUpdate({_id:id},{$inc:{click:1}},{new:true})
                                .populate({path: 'user', select: 'username' })
@@ -100,7 +106,7 @@ async function getDetailData(req){
     
     const commonData = await commonDataPromise
     const article = await articlePromise
-    const commentPageData=await commentPageDataPromise
+    const commentPageData = await commentPageDataPromise
     
     const { categories,topArticles } = commonData
     

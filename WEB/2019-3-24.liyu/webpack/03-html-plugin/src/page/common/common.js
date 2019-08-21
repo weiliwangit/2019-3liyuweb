@@ -1,2 +1,2 @@
-require("./common.css")
+require('./common.css')
 console.log('common js')

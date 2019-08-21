@@ -1,2 +1,2 @@
-require("./index.css")
-console.log('aaa')
+require('./index.css')
+console.log('cccc')

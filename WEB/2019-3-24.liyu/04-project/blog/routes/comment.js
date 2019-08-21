@@ -1,4 +1,9 @@
-
+/*
+* @Author: TomChen
+* @Date:   2019-08-01 15:30:57
+* @Last Modified by:   TomChen
+* @Last Modified time: 2019-08-08 10:21:14
+*/
 const express = require('express')
 const CommentModel = require('../models/comment.js')
 
@@ -20,7 +25,7 @@ router.post("/add",(req,res)=>{
         user:req.userInfo._id
     })
     .then(commnets=>{
-        CommentModel.getPaginationCommentsData(req)
+        CommentModel.getPaginationCommentsData(req,{article:article})
         .then(data=>{
             res.json({
                 status:0,
@@ -65,5 +70,6 @@ router.get('/list',(req,res)=>{
         })        
     })    
 })
+
 
 module.exports = router

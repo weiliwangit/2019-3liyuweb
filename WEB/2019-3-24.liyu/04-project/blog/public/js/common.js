@@ -1,3 +1,9 @@
+/*
+* @Author: TomChen
+* @Date:   2019-03-13 18:10:45
+* @Last Modified by:   TomChen
+* @Last Modified time: 2019-08-08 10:27:39
+*/
 //js文件保存在服务器端,但是最终会被请求到客户端,由客户端来解析执行
 ;(function($){
     //1.登录注册面板的切换
