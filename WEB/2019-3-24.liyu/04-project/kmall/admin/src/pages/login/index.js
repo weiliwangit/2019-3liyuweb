@@ -1,4 +1,3 @@
-
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { Form, Icon, Input, Button, Checkbox } from 'antd';
@@ -18,8 +17,8 @@ class NormalLoginForm extends Component {
                 //console.log('Received values of form: ', values);
                 this.props.handleLogin(values)
             }
-        });
-    };
+        })
+    }
     render() {
         const { getFieldDecorator } = this.props.form;
         return (

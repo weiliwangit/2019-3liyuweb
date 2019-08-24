@@ -1,3 +1,9 @@
+//1,.....message是从ant引进来的
+
+
+
+
+
 import api from 'api'
 import { message } from 'antd'
 
@@ -19,7 +25,6 @@ const getSetPageAction = (payload)=>({
 
 export const getPageAction = (page)=>{
     return (dispatch,getState)=>{
-        
         dispatch(getPageReqestStartAction())
         api.getUserList({
             page:page

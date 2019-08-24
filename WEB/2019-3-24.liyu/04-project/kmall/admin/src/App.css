@@ -1,4 +1,3 @@
-
 *{
     margin: 0;
     padding: 0;
@@ -8,4 +7,7 @@
 }
 .ant-upload-picture-card-wrapper{
     display: block !important;
-} 
+}
+.simditor .simditor-body{
+    overflow: hidden !important;
+}

@@ -15,7 +15,7 @@
 
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { Breadcrumb, Table,Button,Input,InputNumber,Switch,Divider, } from 'antd'
+import { Breadcrumb, Table,Button,Input,InputNumber,Switch,Divider } from 'antd'
 const { Search } = Input
 import moment from 'moment'
 import { 
@@ -41,8 +41,8 @@ class ProductList extends Component {
             total,
             pageSize,
             handlePage,
-            isFetching, 
-            keyword,           
+            isFetching,
+            keyword,            
             handleUpdateIsShow,
             handleUpdateStatus,
             handleUpdateIsHot,
@@ -167,7 +167,7 @@ class ProductList extends Component {
                         }}
                         onChange={
                             (page)=>{
-                                handlePage(page.current)
+                                handlePage(page.current,keyword)
                             }
                         }
                         loading={
@@ -190,8 +190,8 @@ const mapStateToProps = (state) => ({
     current:state.get('product').get('current'),
     total:state.get('product').get('total'),
     pageSize:state.get('product').get('pageSize'), 
-    isFetching:state.get('product').get('isFetching'),
-    keyword: state.get('product').get('keyword'),   
+    isFetching:state.get('product').get('isFetching'), 
+    keyword: state.get('product').get('keyword'), 
 })
 //映射方法到组件
 const mapDispatchToProps = (dispatch) =>({

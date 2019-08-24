@@ -1,3 +1,4 @@
+
 import React, { Component } from 'react'
 import { NavLink } from "react-router-dom"
 import { Layout, Menu, Icon } from 'antd';
@@ -26,7 +27,10 @@ class AdminSider extends Component {
                     </Menu.Item>
                     <Menu.Item key="4">
                       <NavLink to="/product"><Icon type="shopping" />商品管理</NavLink>
-                    </Menu.Item>                                          
+                    </Menu.Item> 
+                    <Menu.Item key="5">
+                      <NavLink to="/ad"><Icon type="fund" />广告管理</NavLink>
+                    </Menu.Item>                                                              
                 </Menu>
               </Sider>
           </div>

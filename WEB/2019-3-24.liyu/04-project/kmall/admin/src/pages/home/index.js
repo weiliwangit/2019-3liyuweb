@@ -29,8 +29,8 @@ class Home extends Component {
         const {usernum,ordernum,productnum } = this.props
         return (
         <div className="Home">
-            <Layout>
-                <Breadcrumb style={{ margin: '16px 0' }}>
+             <Layout>
+                 <Breadcrumb style={{ margin: '16px 0' }}>
                   <Breadcrumb.Item>首页</Breadcrumb.Item>
                 </Breadcrumb>
                 <div className="content">
@@ -52,7 +52,7 @@ class Home extends Component {
                       </Col>
                     </Row>                                                        
                 </div>
-            </Layout>
+             </Layout>
         </div>
         );
     }

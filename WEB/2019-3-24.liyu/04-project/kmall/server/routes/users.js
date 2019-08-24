@@ -17,8 +17,8 @@ const router = Router();
 /*
 router.get('/init',(req,res)=>{
 	UserModel.insertMany({
-		username:'admin',
-		password:hmac('admin'),
+		username:'test1',
+		password:hmac('test1'),
 		isAdmin:true
 	})
 	.then(result=>{

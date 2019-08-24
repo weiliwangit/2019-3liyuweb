@@ -1,4 +1,3 @@
-
 const path = require('path')
 
 const htmlWebpackPlugin = require('html-webpack-plugin')
@@ -114,7 +113,7 @@ module.exports = {
     ],
     devServer: {
         contentBase: './dist',//内容的目录
-        port:8090,//指定服务端口
+        port:3001,//指定服务端口
         historyApiFallback:true//让h5路由不向后端发送请求
     },                
 }

@@ -1,4 +1,3 @@
-
 import * as types  from './actionTypes.js'
 
 import { fromJS } from 'immutable'

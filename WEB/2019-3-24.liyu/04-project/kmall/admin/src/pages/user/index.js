@@ -11,7 +11,9 @@
 //5,......isFetching自己命的名字，在页面加载时使用
 //6,......dataSource，columns是一个数组，table标签自带，columns里的属性固定，可改变属性值,这两个用来定义数据
 //columns里面的是国王，dataSource里面是子民
-
+//7,......spinning用于页面和区块的加载中状态。
+//list,....是一个immutable数据，所以需要将他映射成数组，之后还是immutable数据，
+//还要做一个转换toJS()，才拿到一个真正的数组
 
 
 
@@ -70,7 +72,7 @@ class User extends Component {
                 isAdmin:user.get('isAdmin'),
                 phone:user.get('phone'),
                 email:user.get('email'),
-                createdAt:moment(user.get('createdAt')).format('YYYY-MM-DD HH:mm:ss') 
+                createdAt:moment(user.get('createdAt')).format('YYYY-MM-DD HH:mm:ss')  
             }
         }).toJS()
         return (

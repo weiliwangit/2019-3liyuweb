@@ -1,3 +1,4 @@
+
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { actionCreator } from './store'
@@ -28,7 +29,6 @@ class CategoryAdd extends Component {
     render() {
         const { getFieldDecorator } = this.props.form
         const {categories} = this.props
-        
         return (
             <Layout>
                  <Breadcrumb style={{ margin: '16px 0' }}>

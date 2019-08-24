@@ -1,6 +1,7 @@
 export const SERVER = 'http://127.0.0.1:3000'
 export const UPLOAD_PRODUCT_IMAGE = SERVER + '/products/images'
 export const UPLOAD_PRODUCT_DETAIL_IMAGES = SERVER + '/products/detailImages'
+export const UPLOAD_AD_IMAGE = SERVER + '/ads/image'
 
 export const API_CONFIG = {
     login:                       ['/sessions/users','post'],
@@ -22,4 +23,10 @@ export const API_CONFIG = {
     updateProductsStatus:        ['/products/status','put'],
     updateProductsIsHot:         ['/products/isHot','put'],
     updateProductsOrder:         ['/products/order','put'],
+    getAdsList:                  ["/ads/list","get"],
+    getAdsDetail:                ["/ads/detail","get"],
+    addAds:                      ["/ads","post"],
+    updateAds:                   ["/ads","put"],
+    updateAdsOrder:              ["/ads/order","put"],
+    updateAdsIsShow:             ["/ads/isShow","put"],      
 }
