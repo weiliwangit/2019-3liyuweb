@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>vue实例生命周期</title>
+</head>
+<body>
+	<div id="app">
+		<p ref='p1'>{{message}}</p>
+		<p ref='p1'>{{lala}}</p>
+	</div>
+</body>
+<script  src="js/vue.js"></script>
+<script>
+	let vm =new Vue({
+		el:'#app',
+		data:{
+			message:'你好',
+            lala:'啦啦'
+		},
+        beforeCreate(){
+            console.log('beforeCreate')
+            console.log('this.$el',this.$el) //undefined
+            console.log('this.$refs.p1',this.$refs.p1) //undefined
+            console.log('this.message',this.message)//undefined
+        },
+        created(){
+            console.log('created')
+            console.log('this.$el',this.$el) //undefined
+            console.log('this.$refs.p1',this.$refs.p1) //undefined
+            console.log('this.message',this.message)//hello           
+        },
+        beforeMount(){
+            console.log('beforeMount')
+            console.log('this.$el',this.$el) //dom 节点
+            console.log('this.$refs.p1',this.$refs.p1) //undefined
+            console.log('this.message',this.message)//hello             
+        },
+        mounted(){
+            console.log('mounted')
+            console.log('this.$el',this.$el) //dom 节点
+            console.log('this.$refs.p1',this.$refs.p1) //dom 节点
+            console.log('this.message',this.message)//hello              
+        },
+        beforeUpdate(){
+            console.log('beforeUpdate')
+        },
+        updated(){
+            console.log('updated')
+        },
+        beforeDestroy(){
+            console.log('beforeDestroy')
+        },
+        destroyed(){
+            console.log('destroyed')
+        }
+	})
+	
+	vm.$watch( "message", function(){
+		console.log(1)
+	} )
+
+
+
+</script>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>04-v-model-双向数据绑定.html</title>
+</head>
+<body>
+    <div id="app">
+        <p>{{message}}</p>
+        <input type="text" v-model="message" />
+        <input type="text" v-model.lazy="message" />
+        <!-- lazy就是当输入完之后离开input，点击桌面时才改变 -->
+        <input type="text" v-model.number="message" />
+        <!-- number把以数字开头的转换成数字，数字后面的不显示 -->
+        <input type="text" v-model.trim="message" />
+    </div>
+</body>
+<script src="js/vue.js"></script>
+<script>
+    //vm就是一个Vue的实例
+    //vm是(ViewModel) 的缩写
+    var vm = new Vue({
+        el:'#app',
+        data:{
+            message:'hello',
+        }
+    })
+</script>
+</html>

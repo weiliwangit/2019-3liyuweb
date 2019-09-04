@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>事件冒泡</title>
+    <style>
+        .big-box{
+            width: 500px;
+            height: 500px;
+            background-color: red;
+        }
+        .sm-box{
+            width: 300px;
+            height: 300px;
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <a href="http://www.taobao.com" @click=goShipping($event)>淘宝</a>
+    </div>
+</body>
+<script src="js/vue.js"></script>
+<script> 
+    var vm = new Vue({
+        el:'#app',
+        data:{
+        
+        },
+        methods:{
+            goShipping(ev){
+                ev.preventDefault()
+                console.log('aa')
+            }
+        }
+    })
+    // 1.在computed属性对象中定义计算属性的方法，在页面中使用{{方法名}}来显示计算的结果。
+</script>
+</html>

@@ -1,0 +1,31 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>vue实例</title>
+</head>
+<body>
+	<div id="app">
+		<p ref='p'>{{message}}</p>
+		
+	</div>
+</body>
+<script  src="js/vue.js"></script>
+<script>
+	let vm =new Vue({
+		el:'#app',
+		data:{
+			message:'你好'
+		}
+	})
+	console.log(vm)
+	console.log(vm.$el)
+	console.log(vm.$refs)
+	console.log(vm.$data)
+	vm.$watch( "message", function(){
+		console.log(1)
+	} )
+	vm.$destroy()
+</script>
+</html>

@@ -1,0 +1,37 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>21-组件-动态组件-保持状态.html</title>
+    <style>
+        .fade-enter-active, .fade-leave-active {
+          transition: opacity .5s;
+        }
+        .fade-enter, .fade-leave-to {
+          opacity: 0;
+        } 
+    </style>
+</head>
+
+<body>
+    <div id="app">
+       <button @click="show = !show">切换</button>
+       <transition name='fade' appear>
+        <p v-if="show">hello</p>
+       </transition>
+    </div>        
+</body>
+<script src="js/vue.js"></script>
+<script>
+    var vm = new Vue({
+        el: '#app',
+        data: {
+            show:true
+        },
+    })   
+</script>
+
+</html>
+          

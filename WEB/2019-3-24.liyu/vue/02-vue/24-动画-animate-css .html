@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>23-列表动画 .html</title>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/animate.css@3.5.1">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <button @click="show = !show">
+            动画
+        </button>
+        <transition
+            name="custom-classes-transition"
+            enter-active-class="animated tada"
+            leave-active-class="animated bounceOutRight"
+        >
+    <p v-if="show">hello</p>
+  </transition>
+    </div>
+</body>
+<script src="js/vue.js"></script>
+<script>
+var vm = new Vue({
+    el: '#app',
+    data:{
+       show:true
+    },
+    
+})
+</script>
+
+</html>
+          

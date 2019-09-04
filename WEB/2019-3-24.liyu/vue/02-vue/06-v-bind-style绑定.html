@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>011-v-bind-属性绑定.html</title>
+    <style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+    p {
+        margin-top: 10px;
+    }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <p>我是文字</p>
+        <p style="background-color: red;color: yellow">style="background-color: red;color: yellow"</p>
+        <p :style="background-color: red;color: yellow">style="background-color: red;color: yellow"</p>
+    </div>
+</body>
+<script src="js/vue.js"></script>
+<script>
+var vm = new Vue({
+    el: '#app',
+    data: {
+        
+    }
+})
+</script>
+
+</html>

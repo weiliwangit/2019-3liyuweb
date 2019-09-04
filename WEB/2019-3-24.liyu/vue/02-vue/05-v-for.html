@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>04-v-if.html</title>
+</head>
+<body>
+    <div id="app">
+        <table>
+            <tr>
+                <th>姓名</th>
+                <th>年龄</th>
+                <th>分数</th>
+            </tr>
+            <tr v-for="person in persons">
+                <td>{{person.name}}</td>
+                <td>{{person.age}}</td>
+                <td>{{person.score}}</td>
+               
+            </tr>
+            
+        </table>
+    </div>
+</body>
+<script src="js/vue.js"></script>
+<script>
+    
+    //vm就是一个Vue的实例
+    //vm是(ViewModel) 的缩写
+    var vm = new Vue({
+        el:'#app',
+        data:{
+            persons:[
+                {name:'张三',age:18,score:40},
+                {name:'李四',age:30,score:60}
+            ]
+        }
+    })
+</script>
+</html>

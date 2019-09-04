@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>事件冒泡</title>
+    <style>
+        .big-box{
+            width: 500px;
+            height: 500px;
+            background-color: red;
+        }
+        .sm-box{
+            width: 300px;
+            height: 300px;
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <div class="big-box" @click=bigBox()>
+            <div class="sm-box" @click=smBox($event)></div>
+        </div>
+    </div>
+</body>
+<script src="js/vue.js"></script>
+<script> 
+    var vm = new Vue({
+        el:'#app',
+        data:{
+        
+        },
+        methods:{
+            bigBox(){
+            console.log("bigBox")
+            },
+            smBox(ev){
+                event.stopPropagation() 
+                console.log("smBox")
+            }
+       
+        }
+    })
+</script>
+</html>

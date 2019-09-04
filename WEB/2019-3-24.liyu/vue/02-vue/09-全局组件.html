@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>全局组件</title>
+</head>
+<body>
+	<div id="app1">
+		<button-counter></button-counter>
+		<button-counter></button-counter>
+		<button-counter></button-counter>
+		<button-counter></button-counter>
+		<button-counter></button-counter>
+	</div>
+	<div id="app2">
+		<button-counter></button-counter>
+		<button-counter></button-counter>
+		<button-counter></button-counter>
+		<button-counter></button-counter>
+		<button-counter></button-counter>
+	</div>
+</body>
+<script src="js/vue.js"></script>
+<script>
+	//注册全局组件(全局就是定义的组件在所有的vue实例上都可以使用)
+
+    //注意:定义要放在vue实例生成之前
+	Vue.component('button-counter',{
+		data:function(){
+			return {
+				count:0
+			}
+		},
+		template: '<button @click="count++">点击了{{count}}</button>'
+	}) 
+	
+    var vm1 = new Vue({
+        el:'#app1',
+        data:{
+	       
+        },
+       
+    })
+    var vm2 = new Vue({
+        el:'#app2',
+        data:{
+	       
+        },
+       
+    })
+   
+</script>
+</html>

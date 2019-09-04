@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>监听dom事件</title>
+</head>
+<body>
+    <div id="app">
+       <button v-on:click='count++'>点击了{{count}}次</button>
+       <button @click='count++'>点击了{{count}}次</button>
+       <button @click="calcacute">我被点击了{{count}}次</button>
+        <button @click="calcacute()">我被点击了{{count}}次</button>
+        <button @click="say">say</button>
+        <!-- 不传参数默认会传入event -->
+        <button @click="say('hello')">say</button>
+       
+    </div>
+</body>
+<script src="js/vue.js"></script>
+<script>
+  
+    var vm = new Vue({
+        el:'#app',
+        data:{
+           count:0,
+        },
+        methods:{
+            calcacute(){
+                //在这里this指的是vm
+                this.count++
+            },
+            say(msg){
+            console.log(msg)
+        }
+        }
+    })
+</script>
+</html>

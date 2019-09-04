@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>23-列表动画 .html</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        
+    </style>
+</head>
+
+<body>
+    <div id="app">
+       <p :title>{{price | formatPrice}}</p>
+  
+    </div>
+</body>
+<script src="js/vue.js"></script>
+<script>
+    Vue.filter('formatPrice',function(price){
+        return '$'+price.toFixed(3)
+    })
+    var vm = new Vue({
+        el: '#app',
+        data:{
+            price:10
+        },
+        
+    })
+</script>
+
+</html>
+          

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>18- shi名插槽.html</title>
+</head>
+
+<body>
+    <div id="app">
+        <layout>
+            <div slot='focus'>aa</div>
+            <div slot='content'>bb</div>
+        </layout> 
+    </div>
+   
+    <template id="layout">
+        <div>
+            <nav>导航</nav>
+            <slot name="focus">焦点区域</slot>
+            <!-- 注意slot属性必须是name -->
+            <slot  name="content">主要内容</slot>
+            <footer>底部</footer>
+        </div>
+    </template>
+       
+</body>
+<script src="js/vue.js"></script>
+<script>
+   
+    //注册
+    Vue.component('layout',{
+        template:'#layout'
+    })
+    var vm = new Vue({
+        el: '#app',
+        data: {
+           
+        }
+    })   
+</script>
+
+</html>
