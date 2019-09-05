@@ -1,0 +1,9 @@
+/* pages/article/article.wxss */
+
+  page{
+    background-color: #b4a59e
+  }
+  .slide-image{
+    width:100%;
+    height: 480rpx;
+  }

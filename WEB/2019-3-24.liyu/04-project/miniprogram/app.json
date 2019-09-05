@@ -1,0 +1,14 @@
+{
+  "pages": [
+    "pages/article/article",
+    "pages/index/index",
+    "pages/logs/logs"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fabda1",
+    "navigationBarTitleText": "万物生",
+    "navigationBarTextStyle": "black"
+  },
+  "sitemapLocation": "sitemap.json"
+}

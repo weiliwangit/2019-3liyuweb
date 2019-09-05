@@ -1,0 +1,18 @@
+<view>
+  <swiper indicator-dots="true"
+    autoplay="true" interval="5000" duration="500">
+    
+      <swiper-item>
+        <image src="/pages/images/one2.jpg" class="slide-image" />
+      </swiper-item>
+      <swiper-item>
+        <image src="/pages/images/one3.jpg" class="slide-image" />
+      </swiper-item>
+      <swiper-item>
+        <image src="/pages/images/one4.jpg" class="slide-image" />
+      </swiper-item>
+    
+  </swiper>
+  
+  
+</view>
